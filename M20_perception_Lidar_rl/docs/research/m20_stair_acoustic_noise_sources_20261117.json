@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "retrieved_date": "2026-11-17",
+  "timezone": "Asia/Shanghai",
+  "scope": "Physical stair-locomotion sound: impact noise plus motor, joint, transmission and structural noise",
+  "user_observations": {
+    "reported_date": "2026-11-17",
+    "contact_noise": "触地的噪声是一直有的，需要降低",
+    "motor_whine": "运动速度比较快或者运动幅度比较大的时候会很明显",
+    "evidence_type": "User-reported qualitative observation; no synchronized acoustic or actuator measurement collected in this revision",
+    "priority": "Reduce touchdown impact while preserving clearance and support; analyze high-speed and large-motion motor noise without global motion suppression"
+  },
+  "search_method": "OpenAlex discovery; primary arXiv/PMC/publisher/institutional full text; Crossref/OpenAlex venue checks",
+  "reading_scope": "Targeted reading of methods, experiments and limitations; not a systematic or exhaustive review",
+  "changes": "Documentation only; no new training, controller changes or robot acoustic measurements",
+  "sources": [
+    {
+      "id": "R01",
+      "title": "Learning Quiet Walking for a Small Home Robot",
+      "year": 2025,
+      "venue": "ICRA 2025",
+      "status": "published",
+      "doi": "10.1109/ICRA55743.2025.11128174",
+      "url": "https://arxiv.org/html/2502.10983v2",
+      "retrieved_url": "https://arxiv.org/html/2502.10983",
+      "project": "https://sony.github.io/QuietWalk/",
+      "evidence": "Real aibo audio plus simulation contact-velocity metrics; not calibrated dBA comparable to other papers",
+      "read_sections": [
+        "III Method",
+        "IV Experiments and Results",
+        "V Discussion",
+        "VI Conclusion"
+      ],
+      "m20_caveat": "Strong penalties caused nonwalking; quietest controller lost some robustness; variable PD changes deployment contract",
+      "retrieved_body": {
+        "sha256": "912c8ec432c518da655b4d37a3821d5e251c259a0bc2ddba85c529310a925e08",
+        "bytes": 141251
+      }
+    },
+    {
+      "id": "R02",
+      "title": "Minimizing Acoustic Noise: Enhancing Quiet Locomotion for Quadruped Robots in Indoor Applications",
+      "year": 2025,
+      "venue": "IROS 2025",
+      "status": "published",
+      "doi": "10.1109/IROS60139.2025.11246563",
+      "url": "https://arxiv.org/html/2506.23114v1",
+      "retrieved_url": "https://arxiv.org/html/2506.23114",
+      "evidence": "Go1 onboard sound-level measurements on indoor flat surfaces, including actual-speed comparison",
+      "read_sections": [
+        "II Methodology",
+        "III Experimental Results",
+        "IV Conclusions and Discussion"
+      ],
+      "m20_caveat": "Quiet factor weakens velocity reward; not matched M20 wheeled stair validation",
+      "retrieved_body": {
+        "sha256": "cb2404e762fdfc8271b416fa77900e3ada1a59c0e25ef969161343444d12f19d",
+        "bytes": 178731
+      }
+    },
+    {
+      "id": "R03",
+      "title": "Human-Centered Development of Guide Dog Robots: Quiet and Stable Locomotion Control",
+      "year": 2026,
+      "venue": "ICRA 2026",
+      "status": "published",
+      "doi": "10.1109/ICRA57385.2026.11696250",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13663884/",
+      "retrieved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13663884/",
+      "evidence": "Go1 flat walking audio comparison and stair demonstrations; approx. 10 dB pertains to walking comparison",
+      "read_sections": [
+        "III Control framework",
+        "IV Controller Evaluation",
+        "V User Evaluation",
+        "VI Conclusion"
+      ],
+      "m20_caveat": "Approximately 12.7–13 cm rise and 60 cm tread differ from M20; smartphone ear-level measurement",
+      "retrieved_body": {
+        "sha256": "f5b448b53b553eda70e97c33c09c0e16db450ab093152a0cb701371b68dac5cc",
+        "bytes": 193293
+      }
+    },
+    {
+      "id": "R04",
+      "title": "TACET: Context-Appropriate Acoustic-Social Navigation for Quadrupeds",
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "preprint; no formal venue verified",
+      "doi": "10.48550/arXiv.2610.03828",
+      "url": "https://arxiv.org/html/2610.03828v1",
+      "retrieved_url": "https://arxiv.org/html/2610.03828",
+      "evidence": "Go2 flat acoustic benchmark at matched actual speeds; context-conditioned navigation",
+      "read_sections": [
+        "III-E Quiet Locomotion",
+        "IV-B Acoustic Locomotion Benchmark",
+        "V Conclusion"
+      ],
+      "m20_caveat": "No matched wheeled stair evaluation; novelty and gains are author-reported preprint results",
+      "retrieved_body": {
+        "sha256": "eb834429012623120d6932f7ef99535718886cc3731675d5474046ca8d233866",
+        "bytes": 300402
+      }
+    },
+    {
+      "id": "R05",
+      "title": "Regularizing Action Policies for Smooth Control with Reinforcement Learning",
+      "year": 2021,
+      "venue": "ICRA 2021",
+      "status": "published",
+      "doi": "10.1109/ICRA48506.2021.9561138",
+      "url": "https://arxiv.org/html/2012.06644v2",
+      "retrieved_url": "https://arxiv.org/html/2012.06644",
+      "project": "https://ai.bu.edu/caps/",
+      "evidence": "Policy smoothness, quadrotor control and power; not stair acoustics",
+      "read_sections": [
+        "III CAPS",
+        "IV Evaluation",
+        "V Conclusion"
+      ],
+      "m20_caveat": "Regularization can suppress required rapid actions; no M20 acoustic claim",
+      "retrieved_body": {
+        "sha256": "5e5ae81c6e6e511c0cfc980edc384043fa32b76ffd0b98b96bbf2b766ee0c5a7",
+        "bytes": 167087
+      }
+    },
+    {
+      "id": "R06",
+      "title": "Gradient-based Regularization for Action Smoothness in Robotic Control with Reinforcement Learning",
+      "year": 2024,
+      "venue": "IROS 2024",
+      "status": "published",
+      "doi": "10.1109/IROS58592.2024.10801464",
+      "url": "https://arxiv.org/html/2407.04315v1",
+      "retrieved_url": "https://arxiv.org/html/2407.04315",
+      "evidence": "DMControl and Gym action-smoothness experiments",
+      "read_sections": [
+        "III Our Approach",
+        "IV Experiment Results",
+        "V Conclusion"
+      ],
+      "m20_caveat": "No acoustic measurement; M20 already has a second-order action cost",
+      "retrieved_body": {
+        "sha256": "cb7bd01e1619012aa1141256e979f01bc04ee170117a00c3d793f111512cca0c",
+        "bytes": 210236
+      }
+    },
+    {
+      "id": "R07",
+      "title": "Benchmarking Smoothness and Reducing High-Frequency Oscillations in Continuous Control Policies",
+      "year": 2024,
+      "venue": "IROS 2024",
+      "status": "published",
+      "doi": "10.1109/IROS58592.2024.10802057",
+      "url": "https://arxiv.org/html/2410.16632v1",
+      "retrieved_url": "https://arxiv.org/html/2410.16632",
+      "evidence": "Smoothness/task benchmarks including quadruped hardware, without a dBA result",
+      "read_sections": [
+        "III-B Metrics",
+        "III-C Evaluation Scenarios",
+        "IV Experiments and Results",
+        "V Conclusion"
+      ],
+      "m20_caveat": "26.8% smoothness improvement is not noise reduction in dB",
+      "retrieved_body": {
+        "sha256": "25e8f7973a88d4a154d47ca5df43dc967fecded4f50cdbc9197d9a78bfb9f454",
+        "bytes": 201410
+      }
+    },
+    {
+      "id": "R08",
+      "title": "Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies",
+      "year": 2025,
+      "preprint_year": 2024,
+      "venue": "IROS 2025",
+      "status": "published",
+      "doi": "10.1109/IROS60139.2025.11246506",
+      "url": "https://arxiv.org/html/2410.11825v3",
+      "retrieved_url": "https://arxiv.org/html/2410.11825",
+      "code": "https://github.com/zixuan417/smooth-humanoid-locomotion",
+      "evidence": "Multi-humanoid sim-to-sim and real motion smoothness",
+      "read_sections": [
+        "IV Lipschitz-Constrained Policies",
+        "VI Experiments",
+        "VII Conclusion",
+        "Official code README"
+      ],
+      "m20_caveat": "No acoustic data; Isaac Gym code requires adaptation to this repository",
+      "retrieved_body": {
+        "sha256": "80c771f66c6beef1ecc350a63fcdf85ea59be0cda48da5e1419ce5f1f78bb5f6",
+        "bytes": 222850
+      }
+    },
+    {
+      "id": "R09",
+      "title": "Redesigning Regularization for Effective Policy Smoothing",
+      "year": 2026,
+      "venue": "IEEE Robotics and Automation Letters",
+      "status": "published; arXiv v2 states accepted October 8, 2026",
+      "doi": "10.1109/LRA.2026.3746137",
+      "url": "https://arxiv.org/html/2606.13169v2",
+      "retrieved_url": "https://arxiv.org/html/2606.13169",
+      "evidence": "L2C2-v2 benchmarks and real Go2 command transitions using modified RSL-RL; no audio",
+      "read_sections": [
+        "III Proposal",
+        "V Real-robot experiments",
+        "VI Conclusion"
+      ],
+      "m20_caveat": "Early tracking degradation and tuning tradeoff remain; not a quiet stair result",
+      "retrieved_body": {
+        "sha256": "c4c070915eba187c3e86eea4dcfdd14a5142b86b2c3e50a3e810e5220688b239",
+        "bytes": 233164
+      }
+    },
+    {
+      "id": "R10",
+      "title": "Smoothness as a Constraint for Stable Humanoid Locomotion",
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "preprint; no formal venue verified",
+      "doi": "10.48550/arXiv.2609.24552",
+      "url": "https://arxiv.org/html/2609.24552v1",
+      "retrieved_url": "https://arxiv.org/html/2609.24552",
+      "evidence": "Humanoid grouped constraints and IMU/motion experiments; no acoustic result",
+      "read_sections": [
+        "III Method",
+        "IV Experiments",
+        "V Conclusion"
+      ],
+      "m20_caveat": "Uses termination-probability-adjusted returns; do not assume it preserves stair exploration",
+      "retrieved_body": {
+        "sha256": "2b1d86f586a87534beb4e2485d66cffde6f72f233941adb2d703d07fb93a34f0",
+        "bytes": 363312
+      }
+    },
+    {
+      "id": "R11",
+      "title": "Noise in Electric Motors: A Comprehensive Review",
+      "year": 2023,
+      "venue": "Energies 16(14), 5311",
+      "status": "published review",
+      "doi": "10.3390/en16145311",
+      "url": "https://doi.org/10.3390/en16145311",
+      "retrieved_url": "https://mdpi-res.com/d_attachment/energies/energies-16-05311/article_deploy/energies-16-05311.pdf",
+      "evidence": "Review of acoustic sources, PWM, electromagnetic forces, structure and measurement",
+      "read_sections": [
+        "2 Acoustics and Noise Principles",
+        "3 Noise Sources in Electric Motors",
+        "4 Modeling, Analysis, and Calculation",
+        "5 Noise Reduction Methods",
+        "6 Noise Measurement"
+      ],
+      "m20_caveat": "Not a M20 motor specification; policy smoothing cannot remove every electrical or mechanical source",
+      "retrieved_body": {
+        "sha256": "ae8c945aaf60aab722bea207cdcd5592a834f8bd5ccbbfcfc170aea26c34aec3",
+        "bytes": 1905640
+      }
+    },
+    {
+      "id": "R12",
+      "title": "Noise and Vibration Modeling of Permanent Magnet Synchronous Motors: A Review",
+      "year": 2024,
+      "venue": "IEEE Transactions on Transportation Electrification",
+      "status": "published review; institutional accepted author manuscript read",
+      "doi": "10.1109/TTE.2024.3365151",
+      "url": "https://doi.org/10.1109/TTE.2024.3365151",
+      "retrieved_url": "https://re.public.polimi.it/bitstream/11311/1268683/1/Noise_and_vibration_modelling_of_Permanent_Magnet_Synchronous_Motors_-_a_review.pdf",
+      "evidence": "Electromagnetic excitation, structural response and acoustic radiation modelling review",
+      "read_sections": [
+        "II Vibration and noise sources",
+        "III Electric motor NVH modelling",
+        "V Structural vibration",
+        "VI Acoustic",
+        "VII Conclusion"
+      ],
+      "m20_caveat": "Automotive PMSM context; M20 motor and drive architecture not established",
+      "retrieved_body": {
+        "sha256": "2608f7097d28904c33ad523c3c72e4bf961b76e10c9890acddb4cddac4ed5a4d",
+        "bytes": 2404957
+      }
+    },
+    {
+      "id": "R13",
+      "title": "Compact Gearboxes for Modern Robotics: A Review",
+      "year": 2020,
+      "venue": "Frontiers in Robotics and AI",
+      "status": "published review; supplementary background",
+      "doi": "10.3389/frobt.2020.00103",
+      "url": "https://doi.org/10.3389/frobt.2020.00103",
+      "retrieved_url": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2020.00103/full",
+      "evidence": "Robot transmission mechanisms, nonlinearities and discussion of missing noise benchmarks",
+      "read_sections": [
+        "Control and transmission nonlinearities",
+        "Transmission vibration discussion",
+        "Discussion"
+      ],
+      "m20_caveat": "Authors excluded noise from quantitative comparison; cannot rank gearbox noise using this review",
+      "retrieved_body": {
+        "sha256": "c54f5bfc67b956e25a5090c28d730350472ab1f852264d5eedadd3dd39e12dea",
+        "bytes": 1238593
+      }
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Acoustic Noise of Brushless DC Motors Induced by Electromagnetic Torque Ripple",
+      "doi": "10.6113/JPE.2017.17.4.963",
+      "reason": "Metadata discovered but full-text retrieval failed; not counted among read sources or used for result claims"
+    }
+  ]
+}

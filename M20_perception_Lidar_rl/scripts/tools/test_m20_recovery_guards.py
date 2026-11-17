@@ -21,10 +21,23 @@ def load(name, path):
 limits = load('repair_limits_test', ROOT/'scripts/reinforcement_learning/rsl_rl/repair_workstation_limits.py')
 
 
-@pytest.mark.parametrize('n,k', [(4096, 100), (256, 50000), (0, 1), (1, 0)])
+@pytest.mark.parametrize('n,k', [(4097, 100), (4096, 50000), (0, 1), (1, 0)])
 def test_invalid_workstation_stage(n, k):
     with pytest.raises(ValueError):
         limits.validate(n, k)
+
+
+def test_user_requested_environment_bound_and_default():
+    assert limits.validate(None, None) == (4096, 100)
+    assert limits.validate(4096, 100) == (4096, 100)
+    # Smaller counts remain available for explicitly selected CPU/runtime probes.
+    assert limits.validate(2048, 25) == (2048, 25)
+    assert limits.validate(256, 25) == (256, 25)
+
+
+def test_distributed_remains_rejected_at_requested_count():
+    with pytest.raises(ValueError, match='one GPU process'):
+        limits.validate(4096, 100, distributed=True)
 
 
 def test_missing_limits_fail_closed(tmp_path):
@@ -34,8 +47,9 @@ def test_missing_limits_fail_closed(tmp_path):
 
 @pytest.mark.parametrize('script', ['train_m20_v111_entry_flat.sh', 'train_m20_v111_adjacent.sh'])
 @pytest.mark.parametrize('arguments,reason', [
-    (['--num_envs', '4096', '--max_iterations', '100'], 'environments must'),
-    (['--num_envs=256', '--max_iterations=50000'], 'stages are limited'),
+    (['--num_envs', '4097', '--max_iterations', '100'], 'environments must'),
+    (['--num_envs=4096', '--max_iterations=50000'], 'stages are limited'),
+    (['--num_envs', '4096', '--max_iterations', '100', '--distributed'], 'one GPU process'),
     (['--max_iterations', '100', '--max_iterations', '50000'], 'stages are limited')])
 def test_real_launchers_reject_before_importing_isaac(script, arguments, reason):
     env = dict(os.environ, M20_PYTHON=sys.executable)

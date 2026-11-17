@@ -1,5 +1,6 @@
 {
   "format_version": 1,
+  "manifest_scope": "Historical initial migration snapshot; subsequent recovery code and selected model publication are recorded in PUBLISH_UPDATE_20261117.json",
   "source_head": "f97103d851d4f92f107d649efa0205cde0acf729",
   "validation_head": "c571383f72d156d378b3f3879edbbfb46fa8c429",
   "robot_submodule_commit": "18192847e16ab85c056440072fcc5844cef43856",

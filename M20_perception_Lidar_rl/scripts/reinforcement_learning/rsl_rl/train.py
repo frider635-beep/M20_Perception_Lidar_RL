@@ -37,6 +37,12 @@ parser.add_argument("--seed", type=int, default=None, help="Seed used for the en
 parser.add_argument("--max_iterations", type=int, default=None, help="RL Policy training iterations.")
 parser.add_argument("--initial-checkpoint", type=str, default=None,
                     help="EntryFlatRepair: initialize from an exact checkpoint path with fresh Adam state")
+parser.add_argument("--guarded-total-updates", type=int, default=None,
+                    help="Recovery only: total additional updates with periodic behavior reports; valid behavior failures continue")
+parser.add_argument("--guard-baseline", type=str, default=None,
+                    help="Results JSON from the original 35300 on this host, including keyboard cases")
+parser.add_argument("--guard-output", type=str, default=None,
+                    help="New session directory for status and periodic independent evaluation")
 parser.add_argument(
     "--distributed", action="store_true", default=False, help="Run training with multiple GPUs or nodes."
 )
@@ -51,6 +57,10 @@ from repair_workstation_limits import TASKS as REPAIR_TASKS, validate as validat
 if args_cli.task in REPAIR_TASKS:
     args_cli.num_envs, args_cli.max_iterations = validate_repair_limits(
         args_cli.num_envs, args_cli.max_iterations, distributed=args_cli.distributed)
+if args_cli.guarded_total_updates is not None:
+    from guarded_recovery import validate_session
+    validate_session(args_cli.task, args_cli.guarded_total_updates, args_cli.max_iterations,
+                     args_cli.guard_baseline, args_cli.guard_output)
 
 # always enable cameras to record video
 if args_cli.video:
@@ -62,6 +72,11 @@ sys.argv = [sys.argv[0]] + hydra_args
 # launch omniverse app
 app_launcher = AppLauncher(args_cli)
 simulation_app = app_launcher.app
+if args_cli.headless and args_cli.task in REPAIR_TASKS:
+    # Isaac installs SIGTERM -> app.close() and SIGINT -> native shutdown.
+    # Replace those handlers before training so user stops can unwind safely.
+    from guarded_recovery import TrainingInterrupted, install_interrupt_handlers
+    install_interrupt_handlers()
 
 # suppress noisy omni.usd warnings (e.g. unresolved visual prim references)
 import carb
@@ -186,7 +201,8 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     log_root_path = os.path.abspath(log_root_path)
     print(f"[INFO] Logging experiment in directory: {log_root_path}")
     # specify directory for logging runs: {time-stamp}_{run_name}
-    log_dir = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    log_dir = datetime.now().strftime(
+        "%Y-%m-%d_%H-%M-%S_%f" if args_cli.guarded_total_updates is not None else "%Y-%m-%d_%H-%M-%S")
     # The Ray Tune workflow extracts experiment name using the logging line below, hence, do not change it (see PR #2346, comment-2819298849)
     print(f"Exact experiment name requested from command line: {log_dir}")
     if agent_cfg.run_name:
@@ -292,7 +308,14 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
         write_manifest(log_dir, env, runner, agent_cfg)
     run_status = "completed"
     try:
-        runner.learn(num_learning_iterations=agent_cfg.max_iterations, init_at_random_ep_len=True)
+        if args_cli.guarded_total_updates is not None:
+            from guarded_recovery import learn_guarded
+            learn_guarded(runner, total_updates=args_cli.guarded_total_updates,
+                          segment_updates=agent_cfg.max_iterations,
+                          baseline_path=args_cli.guard_baseline,
+                          output_path=args_cli.guard_output, log_dir=log_dir)
+        else:
+            runner.learn(num_learning_iterations=agent_cfg.max_iterations, init_at_random_ep_len=True)
     except BaseException as error:
         run_status = type(error).__name__
         raise
@@ -308,11 +331,37 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
                 from pathlib import Path
                 Path(log_dir, "V135_REPORT_ERROR.txt").write_text(repr(report_error))
                 print(f"[V135 REPORT FAILED] {report_error!r}", flush=True)
+        writer = getattr(getattr(runner, 'logger', None), 'writer', None)
+        if writer is not None:
+            writer.flush()
+            writer.close()
         env.close()
 
 
 if __name__ == "__main__":
-    # run the main function
+    if args_cli.headless and args_cli.task in REPAIR_TASKS:
+        # This host's Isaac Sim 5.1 Kit faults in native framework teardown,
+        # after training, checkpoint and environment cleanup have completed.
+        # Do not invoke that teardown for this standalone headless process.
+        # Preserve real failure exit codes; never turn a failed gate into success.
+        try:
+            main()
+        except TrainingInterrupted as error:
+            print(f'[M20] {error}; interrupted segment is not an accepted checkpoint.', flush=True)
+            sys.stdout.flush()
+            sys.stderr.flush()
+            os._exit(128 + error.signum)
+        except BaseException:
+            import traceback
+            traceback.print_exc()
+            sys.stdout.flush()
+            sys.stderr.flush()
+            os._exit(1)
+        print('[M20] Training target finished; logs flushed and environment closed. '
+              'Check acceptance reports for model quality.', flush=True)
+        sys.stdout.flush()
+        sys.stderr.flush()
+        os._exit(0)
     main()
     # close sim app
     simulation_app.close()

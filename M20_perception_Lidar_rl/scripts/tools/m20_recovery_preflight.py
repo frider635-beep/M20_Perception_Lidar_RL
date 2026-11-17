@@ -1,6 +1,7 @@
 """CPU-only migration/ABI checks; never creates an Isaac app or trains a policy."""
 import argparse
 import hashlib
+import importlib.util
 from importlib import metadata, util
 import json
 from pathlib import Path
@@ -48,22 +49,21 @@ def main():
             raise ValueError('Expected the native 568D critic; refusing guessed training ABI')
         if not all(torch.isfinite(value).all() for value in critic.values() if torch.is_tensor(value)):
             raise ValueError('Checkpoint critic contains nonfinite weights')
-    with np.load(a.replay, allow_pickle=False) as data:
-        obs = data['observation']
-        if obs.dtype != np.float32 or obs.ndim != 2 or obs.shape[1] != 63 or not len(obs) or not np.isfinite(obs).all():
-            raise ValueError('Reference observations must be nonempty, finite float32 N x 63')
-        samples = len(obs)
+    module_path = ROOT/'source/rl_training/rl_training/recovery_reference.py'
+    spec = importlib.util.spec_from_file_location('m20_recovery_reference', module_path)
+    reference = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(reference)
+    obs, scene, phase, case_id = reference.load_labeled_replay(a.replay, teacher.metadata['checkpoint_sha256'])
+    samples = len(obs)
     replay_sha = hashlib.sha256(a.replay.read_bytes()).hexdigest()
-    bundled = ROOT/'data/m20_recovery/reference_observations_v1.npz'
-    if a.replay.resolve() == bundled.resolve():
-        expected = json.loads(bundled.with_suffix('.json').read_text())['replay_sha256']
-        if replay_sha != expected:
-            raise ValueError('Bundled reference replay SHA-256 mismatch')
     result = dict(status='cpu_preflight_passed', versions=versions, checkpoint=saved.metadata,
         teacher=teacher.metadata, replay=str(a.replay.resolve()), replay_samples=samples,
-        replay_sha256=replay_sha,
-        skipped=['Isaac runtime wiring, PPO update and training: user requested no training',
-                 'Target-host physics performance: rerun after migration'],
+        replay_sha256=replay_sha, replay_schema_version=2,
+        replay_scenes={str(int(k)): int((scene == k).sum()) for k in np.unique(scene)},
+        replay_phases={str(int(k)): int((phase == k).sum()) for k in np.unique(phase)},
+        replay_cases=int(len(np.unique(case_id))),
+        skipped=['Isaac runtime wiring and PPO updates are outside this CPU-only check',
+                 'Physics behavior is covered by the separate benchmark'],
         no_training_started=True)
     if a.output:
         a.output.parent.mkdir(parents=True, exist_ok=True)

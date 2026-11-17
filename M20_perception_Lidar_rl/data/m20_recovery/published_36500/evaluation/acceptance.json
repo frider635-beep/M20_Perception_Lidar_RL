@@ -1,0 +1,109 @@
+{
+  "schema_version": 2,
+  "criteria": {
+    "schema_version": 2,
+    "minimum_speed_ratio": 0.9,
+    "minimum_window_speed_ratio": 0.4,
+    "maximum_flat_speed_ratio": 1.1,
+    "maximum_flat_reach_p95": 0.1,
+    "maximum_idle_yaw_deg": 2.0,
+    "maximum_flat_yaw_deg": 3.0,
+    "maximum_ascent_yaw_deg": 8.0,
+    "maximum_flat_lateral_m": 0.15,
+    "maximum_ascent_lateral_m": 0.35,
+    "retention_minimum_speed_ratio": 0.95,
+    "retention_window_speed_tolerance": 0.15,
+    "retention_yaw_tolerance_deg": 3.0,
+    "retention_lateral_tolerance_m": 0.1,
+    "require_keyboard_profile": true,
+    "expected_treads": [
+      0.26,
+      0.3
+    ],
+    "expected_speeds": [
+      0.5,
+      0.7,
+      1.0
+    ],
+    "stair_height": 0.16,
+    "scope": "Retention permits bounded optimization only; repair requires front-wheel every-tread support, sustained four-wheel upright top support, no falls or route stalls, post-entry speed, compact flat stance and separate C-idle/moving yaw gates. Rear-wheel tread sequences are recorded without a hard gate. Fixed clean MuJoCo cases are not real-robot acceptance. Thresholds are prospective and versioned, not evidence of a successful model."
+  },
+  "gate": "retention",
+  "baseline_only": false,
+  "baseline_results": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/results.json",
+  "baseline_sha256": "4efb160011f052674796e1b772ee10facf35fc4cae3592cd1e33d58a7f0cc789",
+  "accepted_checkpoint": null,
+  "retention_checkpoint": null,
+  "candidates": [
+    {
+      "checkpoint": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/logs/rsl_rl/M20-V11.1-AscentRecovery/2026-11-17_14-59-02_063111_guarded_30000_from35300/model_36500.pt",
+      "results": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/recovery_4096_20261117_145846_170996876/eval_001200/results.json",
+      "valid_baseline": true,
+      "validation_failures": [],
+      "retention_passed": false,
+      "repair_passed": false,
+      "retention_failures": [
+        "standing/flat/None/1.0: lateral drift regression"
+      ],
+      "repair_failures": [
+        "standing/flat/None/0.5: moving yaw drift",
+        "standing/flat/None/0.5: moving lateral drift",
+        "standing/flat/None/0.5: flat wheel workspace",
+        "standing/flat/None/0.7: moving yaw drift",
+        "standing/flat/None/0.7: moving lateral drift",
+        "standing/flat/None/0.7: flat wheel workspace",
+        "standing/flat/None/1.0: moving yaw drift",
+        "standing/flat/None/1.0: moving lateral drift",
+        "standing/flat/None/1.0: flat wheel workspace",
+        "standing/ascent/0.26/0.5: moving lateral drift",
+        "standing/ascent/0.26/0.5: incomplete support or skipped tread sequence",
+        "standing/ascent/0.26/0.7: incomplete support or skipped tread sequence",
+        "standing/ascent/0.26/1.0: incomplete support or skipped tread sequence",
+        "standing/ascent/0.26/1.0: speed deficit",
+        "standing/ascent/0.3/0.7: incomplete support or skipped tread sequence",
+        "standing/ascent/0.3/1.0: incomplete support or skipped tread sequence",
+        "z_c_8/flat/None/0.7: C idle yaw drift",
+        "z_c_8/flat/None/0.7: moving lateral drift",
+        "z_c_8/ascent/0.26/0.7: C idle yaw drift",
+        "z_c_8/ascent/0.26/0.7: moving yaw drift",
+        "z_c_8/ascent/0.26/0.7: incomplete support or skipped tread sequence",
+        "z_c_8/ascent/0.3/0.7: C idle yaw drift",
+        "z_c_8/ascent/0.3/0.7: moving yaw drift",
+        "z_c_8/ascent/0.3/0.7: incomplete support or skipped tread sequence"
+      ]
+    }
+  ],
+  "retention_passed": false,
+  "repair_passed": false,
+  "valid_baseline": true,
+  "retention_failures": [
+    "standing/flat/None/1.0: lateral drift regression"
+  ],
+  "repair_failures": [
+    "standing/flat/None/0.5: moving yaw drift",
+    "standing/flat/None/0.5: moving lateral drift",
+    "standing/flat/None/0.5: flat wheel workspace",
+    "standing/flat/None/0.7: moving yaw drift",
+    "standing/flat/None/0.7: moving lateral drift",
+    "standing/flat/None/0.7: flat wheel workspace",
+    "standing/flat/None/1.0: moving yaw drift",
+    "standing/flat/None/1.0: moving lateral drift",
+    "standing/flat/None/1.0: flat wheel workspace",
+    "standing/ascent/0.26/0.5: moving lateral drift",
+    "standing/ascent/0.26/0.5: incomplete support or skipped tread sequence",
+    "standing/ascent/0.26/0.7: incomplete support or skipped tread sequence",
+    "standing/ascent/0.26/1.0: incomplete support or skipped tread sequence",
+    "standing/ascent/0.26/1.0: speed deficit",
+    "standing/ascent/0.3/0.7: incomplete support or skipped tread sequence",
+    "standing/ascent/0.3/1.0: incomplete support or skipped tread sequence",
+    "z_c_8/flat/None/0.7: C idle yaw drift",
+    "z_c_8/flat/None/0.7: moving lateral drift",
+    "z_c_8/ascent/0.26/0.7: C idle yaw drift",
+    "z_c_8/ascent/0.26/0.7: moving yaw drift",
+    "z_c_8/ascent/0.26/0.7: incomplete support or skipped tread sequence",
+    "z_c_8/ascent/0.3/0.7: C idle yaw drift",
+    "z_c_8/ascent/0.3/0.7: moving yaw drift",
+    "z_c_8/ascent/0.3/0.7: incomplete support or skipped tread sequence"
+  ],
+  "validation_failures": []
+}

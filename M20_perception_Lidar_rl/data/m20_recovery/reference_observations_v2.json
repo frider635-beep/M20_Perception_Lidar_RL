@@ -1,0 +1,171 @@
+{
+  "schema_version": 2,
+  "source_checkpoint": "interview_prep/model_35300.pt",
+  "source_sha256": "4aefe17ddc279ee809ff6257862ba4e28bb1b19ad48b11a5948b116256d61f8b",
+  "replay_path": "data/m20_recovery/reference_observations_v2.npz",
+  "replay_sha256": "54fa29816f9f245c5b431d995af20444db1281781fb0f0dde337d3b4f3d0d5c2",
+  "samples": 6724,
+  "shape": [
+    6724,
+    63
+  ],
+  "dtype": "float32",
+  "scene_names": {
+    "0": "flat_route",
+    "1": "ascent_route"
+  },
+  "phase_names": {
+    "1": "policy_idle",
+    "2": "moving",
+    "3": "after_motion"
+  },
+  "source": "Recorded teacher MuJoCo physics, physical case labels and production policy phases; no optimization",
+  "scene_scope": "Terrain-case identity, not an inference from actor B flags. Ascent approach/exit retain the ascent case label.",
+  "policy_abi": "v11_signed_edges_v2; 63 observations / 16 actions",
+  "cases": [
+    {
+      "case_id": 0,
+      "terrain": "flat",
+      "profile": "z_c_8",
+      "tread": null,
+      "command_speed": 0.7,
+      "samples": 800,
+      "trajectory": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/keyboard/flat_None_0.7.npz",
+      "trajectory_sha256": "1bcce204dc8057685d5fef64852d25eec2392ef59f6ad8fc2187ed44e5fb79c4",
+      "manifest": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/keyboard/manifest.json",
+      "manifest_sha256": "7d3e8a9f1fe97d08b0adf06a190f2a9abeadb5e1c43b1031b803d3478cc87421"
+    },
+    {
+      "case_id": 1,
+      "terrain": "ascent",
+      "profile": "z_c_8",
+      "tread": 0.26,
+      "command_speed": 0.7,
+      "samples": 575,
+      "trajectory": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/keyboard/ascent_0.26_0.7.npz",
+      "trajectory_sha256": "5387cee25aa3e5afe6400a6fd98f56af1e8dcf7dcef054612a75616fa86024ea",
+      "manifest": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/keyboard/manifest.json",
+      "manifest_sha256": "7d3e8a9f1fe97d08b0adf06a190f2a9abeadb5e1c43b1031b803d3478cc87421"
+    },
+    {
+      "case_id": 2,
+      "terrain": "ascent",
+      "profile": "z_c_8",
+      "tread": 0.3,
+      "command_speed": 0.7,
+      "samples": 572,
+      "trajectory": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/keyboard/ascent_0.3_0.7.npz",
+      "trajectory_sha256": "6e92e977265ce8f5b3a5f7ff302fdea83dc351a9289bb3f670b754e7106b6d5f",
+      "manifest": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/keyboard/manifest.json",
+      "manifest_sha256": "7d3e8a9f1fe97d08b0adf06a190f2a9abeadb5e1c43b1031b803d3478cc87421"
+    },
+    {
+      "case_id": 3,
+      "terrain": "flat",
+      "profile": "standing",
+      "tread": null,
+      "command_speed": 0.5,
+      "samples": 701,
+      "trajectory": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/flat_None_0.5.npz",
+      "trajectory_sha256": "550512ce669f06ae1c1a401f85668e3bbbfda126460e09ed27200289fab33b45",
+      "manifest": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/manifest.json",
+      "manifest_sha256": "45f92621fcd46ad49c33b98bd2aa158c3b1ab1b65f04257b9eb162524fd7d1b5"
+    },
+    {
+      "case_id": 4,
+      "terrain": "flat",
+      "profile": "standing",
+      "tread": null,
+      "command_speed": 0.7,
+      "samples": 701,
+      "trajectory": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/flat_None_0.7.npz",
+      "trajectory_sha256": "4d7fc93c8ba6486fd5227a8446176e465300179f99f127d63ec9b7fc4885460d",
+      "manifest": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/manifest.json",
+      "manifest_sha256": "45f92621fcd46ad49c33b98bd2aa158c3b1ab1b65f04257b9eb162524fd7d1b5"
+    },
+    {
+      "case_id": 5,
+      "terrain": "flat",
+      "profile": "standing",
+      "tread": null,
+      "command_speed": 1.0,
+      "samples": 701,
+      "trajectory": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/flat_None_1.0.npz",
+      "trajectory_sha256": "d2bf7c9008cdaaeee9f07c19270b7f5794478ca350c066ebff7475a9f302a0d5",
+      "manifest": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/manifest.json",
+      "manifest_sha256": "45f92621fcd46ad49c33b98bd2aa158c3b1ab1b65f04257b9eb162524fd7d1b5"
+    },
+    {
+      "case_id": 6,
+      "terrain": "ascent",
+      "profile": "standing",
+      "tread": 0.26,
+      "command_speed": 0.5,
+      "samples": 585,
+      "trajectory": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/ascent_0.26_0.5.npz",
+      "trajectory_sha256": "36931cd095a9546d8525f7431381da5bd0e934530f1bf9440bb8700f98aa9c4e",
+      "manifest": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/manifest.json",
+      "manifest_sha256": "45f92621fcd46ad49c33b98bd2aa158c3b1ab1b65f04257b9eb162524fd7d1b5"
+    },
+    {
+      "case_id": 7,
+      "terrain": "ascent",
+      "profile": "standing",
+      "tread": 0.26,
+      "command_speed": 0.7,
+      "samples": 438,
+      "trajectory": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/ascent_0.26_0.7.npz",
+      "trajectory_sha256": "bda975a67635128135e97ad05872ec5a840a311eafc5861f67aa6bf35b1f4141",
+      "manifest": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/manifest.json",
+      "manifest_sha256": "45f92621fcd46ad49c33b98bd2aa158c3b1ab1b65f04257b9eb162524fd7d1b5"
+    },
+    {
+      "case_id": 8,
+      "terrain": "ascent",
+      "profile": "standing",
+      "tread": 0.26,
+      "command_speed": 1.0,
+      "samples": 314,
+      "trajectory": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/ascent_0.26_1.0.npz",
+      "trajectory_sha256": "33c550a24e268c9a6c1d3f8be6255ca5a4007caadca19d6f9c8d0244daa48f9a",
+      "manifest": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/manifest.json",
+      "manifest_sha256": "45f92621fcd46ad49c33b98bd2aa158c3b1ab1b65f04257b9eb162524fd7d1b5"
+    },
+    {
+      "case_id": 9,
+      "terrain": "ascent",
+      "profile": "standing",
+      "tread": 0.3,
+      "command_speed": 0.5,
+      "samples": 582,
+      "trajectory": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/ascent_0.3_0.5.npz",
+      "trajectory_sha256": "016a520855eec21e7412c83fb7b1fd0d8f03c0177a8f35f6c78921f26ead628c",
+      "manifest": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/manifest.json",
+      "manifest_sha256": "45f92621fcd46ad49c33b98bd2aa158c3b1ab1b65f04257b9eb162524fd7d1b5"
+    },
+    {
+      "case_id": 10,
+      "terrain": "ascent",
+      "profile": "standing",
+      "tread": 0.3,
+      "command_speed": 0.7,
+      "samples": 440,
+      "trajectory": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/ascent_0.3_0.7.npz",
+      "trajectory_sha256": "580094c3aa3739349ba74e85fb2dfda6e51d785bfae61b5e2f1e761c5098d5e4",
+      "manifest": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/manifest.json",
+      "manifest_sha256": "45f92621fcd46ad49c33b98bd2aa158c3b1ab1b65f04257b9eb162524fd7d1b5"
+    },
+    {
+      "case_id": 11,
+      "terrain": "ascent",
+      "profile": "standing",
+      "tread": 0.3,
+      "command_speed": 1.0,
+      "samples": 315,
+      "trajectory": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/ascent_0.3_1.0.npz",
+      "trajectory_sha256": "5f76b5411bdc85f13e3b8d17054ee89630778d704edf4a8ac8e419bc4f5573e3",
+      "manifest": "/home/arcus/deeprobotics_m20_rl/M20_Perception_Lidar_RL/M20_perception_Lidar_rl/artifacts/guarded_30000_baseline_20261117_v2/standing/manifest.json",
+      "manifest_sha256": "45f92621fcd46ad49c33b98bd2aa158c3b1ab1b65f04257b9eb162524fd7d1b5"
+    }
+  ]
+}

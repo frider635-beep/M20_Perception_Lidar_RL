@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "published_date": "2026-11-17",
+  "checkpoint": "logs/rsl_rl/M20-V11.1-AscentRecovery/2026-11-17_14-59-02_063111_guarded_30000_from35300/model_36500.pt",
+  "sha256": "76d06d6daa19693ebdbbb2d3619a7dc6fd5ada2a9fb5a0daf3b345bdecc4f9c5",
+  "bytes": 6561264,
+  "training_run": "M20-V11.1-AscentRecovery/2026-11-17_14-59-02_063111_guarded_30000_from35300",
+  "checkpoint_iteration": 36500,
+  "additional_updates_from_35300": 1200,
+  "config_directory": "data/m20_recovery/published_36500/params",
+  "config_sha256": {
+    "env.yaml": "e27eca9dbe7f08e24ea39dae164ebd4daac37d196dc82014b5a6c32522f56d79",
+    "agent.yaml": "2617f0fb3db20cd9d2db990e44016f99ceb9559543bb9c29ef0a8b06698ecb40"
+  },
+  "source_checkpoint": "interview_prep/model_35300.pt",
+  "source_sha256": "4aefe17ddc279ee809ff6257862ba4e28bb1b19ad48b11a5948b116256d61f8b",
+  "evaluation": {
+    "directory": "evaluation",
+    "copied_from": "artifacts/recovery_4096_20261117_145846_170996876/eval_001200",
+    "retention_passed": false,
+    "repair_passed": false,
+    "retention_failures": [
+      "standing/flat/None/1.0: lateral drift regression"
+    ],
+    "file_sha256": {
+      "acceptance.json": "cdf4c3ec64837e5dd11b4c5cb2fd18f0acc4b5f02ed99886556db551dc930da8",
+      "results.json": "66806e4e92887c728171292adeb514f403db69abb563d41c43aada2de70169e0"
+    }
+  },
+  "status": "User-selected publication candidate; not a fully repaired or noise-reduced policy. Default teacher and initializer remain original 35300.",
+  "migration_note": "Pass --config-dir data/m20_recovery/published_36500/params in the validation runner; configuration files are outside logs to preserve the one-file logs publication rule."
+}

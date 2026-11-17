@@ -9,7 +9,7 @@ DATA = ROOT/'data/m20_recovery'
 
 
 def resolve_assets():
-    metadata = json.loads((DATA/'reference_observations_v1.json').read_text())
+    metadata = json.loads((DATA/'reference_observations_v2.json').read_text())
     def path(value):
         p = Path(value).expanduser()
         return p.resolve() if p.is_absolute() else (ROOT/p).resolve()

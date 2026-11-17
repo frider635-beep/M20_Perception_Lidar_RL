@@ -1,4 +1,5 @@
 """Bounded short recovery stages; deployment ABI remains the native 63->16."""
+import math
 from isaaclab.utils import configclass
 from isaaclab.managers import RewardTermCfg as RewTerm, CurriculumTermCfg as CurrTerm
 from isaaclab_rl.rsl_rl import RslRlPpoAlgorithmCfg
@@ -21,6 +22,15 @@ class M20V111RecoveryCfg:
     minimum_speed_fraction: float = .8
     minimum_upright_cosine: float = .8
     minimum_top_clearance: float = .30
+    flat_cost_cap: float = 2.
+    flat_posture_weight: float = .5
+    flat_quality_weight: float = 1.
+    flat_quality_speed_scale: float = .5
+    straight_stability_weight: float = .5
+    straight_yaw_deadband: float = .03
+    straight_lateral_deadband: float = .05
+    straight_yaw_scale: float = .08
+    straight_lateral_scale: float = .12
 
 
 @configclass
@@ -29,16 +39,25 @@ class DeeproboticsM20V111RecoveryEnvCfg(DeeproboticsM20V111AdjacentEnvCfg):
 
     def __post_init__(self):
         super().__post_init__()
+        # User-selected default on the migrated host; the CLI may reduce it.
+        self.scene.num_envs = 4096
         c = self.v111_recovery
+        if any(not math.isfinite(value) or value <= 0 for value in vars(c).values()
+               if isinstance(value, (int, float))):
+            raise ValueError('Recovery reward scales and budgets must be finite and positive')
         self.rewards.v111_adjacent_skip.weight = c.skip_weight
         self.rewards.v111_adjacent_overshoot = None
         self.rewards.v111_adjacent_complete = None
-        self.rewards.v111_straight_stability = None
+        # New flat posture and straightness costs are at most 1.0 + 0.5 per
+        # second; they cannot erase the native speed reward by multiplication.
+        self.rewards.v111_flat_workspace.weight = c.flat_posture_weight
+        self.rewards.v111_straight_stability = RewTerm(func=recovery.straight_stability, weight=c.straight_stability_weight)
+        self.rewards.v111_recovery_flat_quality = RewTerm(func=recovery.flat_quality, weight=c.flat_quality_weight)
         self.rewards.v111_recovery_swing = RewTerm(func=recovery.overshoot_cost, weight=c.overshoot_weight)
         self.rewards.v111_recovery_progress = RewTerm(func=recovery.body_progress, weight=c.body_progress_weight)
         self.rewards.v111_recovery_complete = RewTerm(func=recovery.whole_completion, weight=c.complete_weight)
-        self.commands.base_velocity.rel_only_lin_x_envs = .07
-        self.commands.base_velocity.rel_zero_vel_envs = .07
+        self.commands.base_velocity.rel_only_lin_x_envs = .20
+        self.commands.base_velocity.rel_zero_vel_envs = .10
         self.rewards.world_forward_progress.params['target_speed_fraction'] = c.target_speed_fraction
         self.rewards.world_forward_deficit.params['min_speed_fraction'] = c.minimum_speed_fraction
         self.curriculum.terrain_levels.params['whole_body_ascent_gate'] = True
@@ -53,6 +72,10 @@ class M20RecoveryPPOCfg(RslRlPpoAlgorithmCfg):
     replay_path: str = ''
     anchor_weight: float = 2.
     anchor_front_stair_weight: float = .04
+    anchor_flat_leg_weight: float = .04
+    anchor_flat_wheel_differential_weight: float = .08
+    anchor_ascent_other_weight: float = .35
+    anchor_tolerance: float = .05
     anchor_batch_size: int = 256
     value_loss_coef: float = 1.
     use_clipped_value_loss: bool = True
@@ -60,7 +83,7 @@ class M20RecoveryPPOCfg(RslRlPpoAlgorithmCfg):
     entropy_coef: float = .001
     num_learning_epochs: int = 3
     num_mini_batches: int = 4
-    learning_rate: float = 2.5e-5
+    learning_rate: float = 1.e-5
     schedule: str = 'fixed'
     gamma: float = .99
     lam: float = .95

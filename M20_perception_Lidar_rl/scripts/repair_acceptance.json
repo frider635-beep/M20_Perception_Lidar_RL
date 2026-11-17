@@ -1,9 +1,21 @@
 {
+  "schema_version": 2,
   "minimum_speed_ratio": 0.9,
+  "minimum_window_speed_ratio": 0.4,
   "maximum_flat_speed_ratio": 1.1,
   "maximum_flat_reach_p95": 0.1,
+  "maximum_idle_yaw_deg": 2.0,
+  "maximum_flat_yaw_deg": 3.0,
+  "maximum_ascent_yaw_deg": 8.0,
+  "maximum_flat_lateral_m": 0.15,
+  "maximum_ascent_lateral_m": 0.35,
+  "retention_minimum_speed_ratio": 0.95,
+  "retention_window_speed_tolerance": 0.15,
+  "retention_yaw_tolerance_deg": 3.0,
+  "retention_lateral_tolerance_m": 0.10,
+  "require_keyboard_profile": true,
   "expected_treads": [0.26, 0.30],
   "expected_speeds": [0.5, 0.7, 1.0],
   "stair_height": 0.16,
-  "scope": "Every front wheel supports every tread, complete flight, no falls, post-entry speed and compact flat stance. Heading drift is logged separately; this gate does not certify real-robot readiness."
+  "scope": "Retention permits bounded optimization only; repair requires front-wheel every-tread support, sustained four-wheel upright top support, no falls or route stalls, post-entry speed, compact flat stance and separate C-idle/moving yaw gates. Rear-wheel tread sequences are recorded without a hard gate. Fixed clean MuJoCo cases are not real-robot acceptance. Thresholds are prospective and versioned, not evidence of a successful model."
 }

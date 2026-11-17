@@ -1,7 +1,12 @@
 {
-  "default_num_envs": 256,
-  "max_num_envs": 256,
+  "default_num_envs": 4096,
+  "max_num_envs": 4096,
   "default_updates": 100,
   "max_updates_per_stage": 200,
-  "basis": "4096-env AdjacentRepair triggered a user-confirmed disk disconnect or reboot. The later 256-env run remained active for over 15 hours, but its MuJoCo ascent degraded during long training. This count is a conservative operational limit, not proof of hardware safety. Every stage needs resource accounting and external MuJoCo acceptance before continuation."
+  "max_guarded_total_updates": 30000,
+  "default_guard_interval": 100,
+  "max_guard_interval": 100,
+  "minimum_free_disk_gib": 6,
+  "minimum_available_ram_gib": 6,
+  "basis": "On 2026-11-17 the user requested 4096 environments, a longer behavior-evaluation interval, and then cancellation of automatic stops for behavior-evaluation failures. The default and maximum interval are 100 updates. Valid behavior failures are recorded and training continues; runtime/evaluation-data errors, resource reserves and user interruption still apply. The 4096-environment run completed 100 updates with all eight ascents completed and no falls or stalls; its only retention failure was keyboard-flat speed 0.664365 m/s versus the 0.669547 m/s threshold. This is not proof of long-run hardware stability. Historical files, checkpoints and acceptance thresholds are preserved."
 }

@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "publication_date": "2026-11-17",
+  "timezone": "Asia/Shanghai",
+  "repository": "https://github.com/frider635-beep/M20_Perception_Lidar_RL",
+  "base_commit": "6b44e803c6fd9c38b0b6b15d1e3b799632522270",
+  "scope": "Files updated by this publication; initial unchanged files remain described by historical PUBLISH_MANIFEST.json. This receipt excludes its own bytes.",
+  "user_logs_rule": "Publish only the explicitly selected model_36500.pt from logs; no other logs, events, checkpoints or adjacent params in logs.",
+  "allowed_logs_files": [
+    "M20_perception_Lidar_rl/logs/rsl_rl/M20-V11.1-AscentRecovery/2026-11-17_14-59-02_063111_guarded_30000_from35300/model_36500.pt"
+  ],
+  "original_checkpoint": {
+    "path": "M20_perception_Lidar_rl/interview_prep/model_35300.pt",
+    "sha256": "4aefe17ddc279ee809ff6257862ba4e28bb1b19ad48b11a5948b116256d61f8b",
+    "role": "Unchanged original initializer and frozen reference"
+  },
+  "selected_checkpoint": {
+    "schema_version": 1,
+    "published_date": "2026-11-17",
+    "checkpoint": "logs/rsl_rl/M20-V11.1-AscentRecovery/2026-11-17_14-59-02_063111_guarded_30000_from35300/model_36500.pt",
+    "sha256": "76d06d6daa19693ebdbbb2d3619a7dc6fd5ada2a9fb5a0daf3b345bdecc4f9c5",
+    "bytes": 6561264,
+    "training_run": "M20-V11.1-AscentRecovery/2026-11-17_14-59-02_063111_guarded_30000_from35300",
+    "checkpoint_iteration": 36500,
+    "additional_updates_from_35300": 1200,
+    "config_directory": "data/m20_recovery/published_36500/params",
+    "config_sha256": {
+      "env.yaml": "e27eca9dbe7f08e24ea39dae164ebd4daac37d196dc82014b5a6c32522f56d79",
+      "agent.yaml": "2617f0fb3db20cd9d2db990e44016f99ceb9559543bb9c29ef0a8b06698ecb40"
+    },
+    "source_checkpoint": "interview_prep/model_35300.pt",
+    "source_sha256": "4aefe17ddc279ee809ff6257862ba4e28bb1b19ad48b11a5948b116256d61f8b",
+    "evaluation": {
+      "directory": "evaluation",
+      "copied_from": "artifacts/recovery_4096_20261117_145846_170996876/eval_001200",
+      "retention_passed": false,
+      "repair_passed": false,
+      "retention_failures": [
+        "standing/flat/None/1.0: lateral drift regression"
+      ],
+      "file_sha256": {
+        "acceptance.json": "cdf4c3ec64837e5dd11b4c5cb2fd18f0acc4b5f02ed99886556db551dc930da8",
+        "results.json": "66806e4e92887c728171292adeb514f403db69abb563d41c43aada2de70169e0"
+      }
+    },
+    "status": "User-selected publication candidate; not a fully repaired or noise-reduced policy. Default teacher and initializer remain original 35300.",
+    "migration_note": "Pass --config-dir data/m20_recovery/published_36500/params in the validation runner; configuration files are outside logs to preserve the one-file logs publication rule."
+  },
+  "validation": {
+    "integrated_cpu_tests": 117,
+    "portable_baseline_preflight": "passed; 4096 environments / 100 updates / 30000 total; no training started",
+    "selected_policy_load": "passed with exact saved params; actor 63->512->256->128->16 ELU, critic 568D",
+    "behavior_failure_policy": "record_and_continue",
+    "training_process_action": "No training started, stopped or restarted by publication"
+  },
+  "files": [
+    {
+      "path": "CODEX_HANDOFF_20261117.md",
+      "bytes": 24826,
+      "sha256": "e6d3e8e17f19f13a891b9e7ba27e4bb56813c4088ce0a7138338236b106b4e6e"
+    },
+    {
+      "path": "CODEX_SESSION_HANDOFF_20261117.md",
+      "bytes": 34843,
+      "sha256": "df3f7cc29c942eb05e26685dd14bf9d311cea82c2ddb2be0753de631d3e6e808"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/baseline_v2/PROVENANCE.json",
+      "bytes": 783,
+      "sha256": "950306fdccdb82a6874688b15584d05c5b4bc3f6212cc1aa77e0cdf8ebef04ef"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/baseline_v2/README.md",
+      "bytes": 754,
+      "sha256": "f89f249e82ec486340329e5a5ed34ebc6b0890551256d6259efce661ba056ed5"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/baseline_v2/keyboard/manifest.json",
+      "bytes": 3283,
+      "sha256": "7d3e8a9f1fe97d08b0adf06a190f2a9abeadb5e1c43b1031b803d3478cc87421"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/baseline_v2/results.json",
+      "bytes": 25808,
+      "sha256": "4efb160011f052674796e1b772ee10facf35fc4cae3592cd1e33d58a7f0cc789"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/baseline_v2/standing/manifest.json",
+      "bytes": 3312,
+      "sha256": "45f92621fcd46ad49c33b98bd2aa158c3b1ab1b65f04257b9eb162524fd7d1b5"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/published_36500/CHECKPOINT.json",
+      "bytes": 1701,
+      "sha256": "4ea3ff559949187830f517e1bb7b1dbfb004877f462a36d54d415876d6abd86f"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/published_36500/README.md",
+      "bytes": 1609,
+      "sha256": "fb5dc29f1d1850899db499de57a3f87e3f739c1c4bbb2fc9c1ff37ad091bfbd3"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/published_36500/evaluation/acceptance.json",
+      "bytes": 5296,
+      "sha256": "cdf4c3ec64837e5dd11b4c5cb2fd18f0acc4b5f02ed99886556db551dc930da8"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/published_36500/evaluation/results.json",
+      "bytes": 25786,
+      "sha256": "66806e4e92887c728171292adeb514f403db69abb563d41c43aada2de70169e0"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/published_36500/params/agent.yaml",
+      "bytes": 1593,
+      "sha256": "2617f0fb3db20cd9d2db990e44016f99ceb9559543bb9c29ef0a8b06698ecb40"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/published_36500/params/env.yaml",
+      "bytes": 110542,
+      "sha256": "e27eca9dbe7f08e24ea39dae164ebd4daac37d196dc82014b5a6c32522f56d79"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/reference_observations_v2.json",
+      "bytes": 9179,
+      "sha256": "5f97fc125fe1e42f73976040cf6736de7a2d9c1b0fcd73d221cf42148fbbe05b"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/data/m20_recovery/reference_observations_v2.npz",
+      "bytes": 1302084,
+      "sha256": "54fa29816f9f245c5b431d995af20444db1281781fb0f0dde337d3b4f3d0d5c2"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/docs/MIGRATION.md",
+      "bytes": 7447,
+      "sha256": "d50595e79e29e0195867e16419deb014d13c93fed4e4ea7d55dfee9bad5fcc36"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/docs/m20_stair_acoustic_noise_literature_20261117.md",
+      "bytes": 25011,
+      "sha256": "5fa48751f211418395be1cb4775e58f37813b1bf2b33a186a081b44c291c3bb2"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/docs/research/m20_stair_acoustic_noise_sources_20261117.json",
+      "bytes": 13297,
+      "sha256": "66374d6e7bd0ab0638ec8fe03e6c28db3c553604f246966c1f8af94407e1cc28"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/docs/v111_continuous_learning_20261117.md",
+      "bytes": 6633,
+      "sha256": "b7a49248a186e6eeca27c080f69129f076d3f382447198b5631ea6cb211d1dd2"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/docs/v111_guarded_training_20261117.md",
+      "bytes": 13966,
+      "sha256": "6d9b99e2b40897f12075473f00b930629be08bd7e5690a8278858bdd1cd770ae"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/logs/rsl_rl/M20-V11.1-AscentRecovery/2026-11-17_14-59-02_063111_guarded_30000_from35300/model_36500.pt",
+      "bytes": 6561264,
+      "sha256": "76d06d6daa19693ebdbbb2d3619a7dc6fd5ada2a9fb5a0daf3b345bdecc4f9c5"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/reinforcement_learning/rsl_rl/guarded_recovery.py",
+      "bytes": 17476,
+      "sha256": "a107d950402d44598930a9ac9a4bd314ee8e032f13b4c5311b86599326a4483c"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/reinforcement_learning/rsl_rl/repair_workstation_limits.py",
+      "bytes": 1934,
+      "sha256": "b7808cb639c7a009828d7bd126d8ed319fe6566752da47e1f37548670da29a85"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/reinforcement_learning/rsl_rl/train.py",
+      "bytes": 17565,
+      "sha256": "fd54000c49081c1fa604746ae4c228cbdc85e64d7801bcec85dd64f1fb1475b0"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/repair_acceptance.json",
+      "bytes": 1070,
+      "sha256": "ccf743715b564e815a96634fd40cfbcd6fe7b16c3618d54e71a09385bd9ec43d"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/repair_workstation_limits.json",
+      "bytes": 977,
+      "sha256": "c84f5c242a5f5d36ba0b862e80b0d3c26942f2634534ca9f97c61cc9a87e51ca"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/tools/m20_build_recovery_replay.py",
+      "bytes": 5626,
+      "sha256": "ac08bc081d6c339e201ca3f859f78e622de7491335637cc09b0fe0dbb57545bd"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/tools/m20_entry_flat_benchmark.py",
+      "bytes": 19632,
+      "sha256": "3422daf309b855e34f50d8aa3e08784bf2830cc385d1d4002409554cfa42dc99"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/tools/m20_recovery_preflight.py",
+      "bytes": 4083,
+      "sha256": "de90003556969992b535413d5c8c8aa4059e462ef54f042f897b4032d4529526"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/tools/m20_repair_acceptance.py",
+      "bytes": 12447,
+      "sha256": "150a456efd0544496d0db78ac00d6478b57c1d4df58b756c0f61e6509f37ccbb"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/tools/test_m20_guarded_session.py",
+      "bytes": 16179,
+      "sha256": "f8756204e108cadb930f95c59f9f252c86b58a1ac68dbd8e126c14788556934a"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/tools/test_m20_recovery_guards.py",
+      "bytes": 2619,
+      "sha256": "0c140eaf5818f9be0facbe1f57dd9114bb9f0f08261e203d0a0d37ca06466b71"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/tools/test_m20_recovery_math.py",
+      "bytes": 9071,
+      "sha256": "020e5710dc56744aca671fbcc0b6b6e8bdb81ae3472178f9d236d21db328c2ca"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/tools/test_m20_recovery_reference.py",
+      "bytes": 7582,
+      "sha256": "ca417640d1b51b7b0ced1ab1731591a45d6299bf8a02ba8c84767c477434788c"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/tools/test_m20_repair_acceptance.py",
+      "bytes": 6036,
+      "sha256": "db326da7805b5fea6a78223c985bb3d837d195fad616d579852a1a5c9a61323f"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/tools/watch_m20_recovery.py",
+      "bytes": 3116,
+      "sha256": "2c6ac254b30aae9fcd9b492aa80c742b6921804d2de443c6925c922b9ad3e533"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/scripts/train_m20_v111_guarded.sh",
+      "bytes": 2530,
+      "sha256": "100d1355b8bb627dd523cb8ca5fe8de435e1a36b30faa4c3afb69abb0a0cc510"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/source/rl_training/rl_training/recovery_assets.py",
+      "bytes": 1142,
+      "sha256": "7b6988a90bbe198e90ec75c250f113e0485eb69bf96a692eb29ad622ef6788f6"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/source/rl_training/rl_training/recovery_reference.py",
+      "bytes": 4494,
+      "sha256": "34faa084201042ef8f3e663fe8e334871dbb5dfaf8c160bfdb0b16afe1b7ac2a"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/config/wheeled/deeprobotics_m20/v111_recovery_env_cfg.py",
+      "bytes": 5032,
+      "sha256": "aef06a482a9ba3b4145fce1dda3b23f9e79f2f75b9f5413647182fd8907dc7fa"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/mdp/v111_entry_flat.py",
+      "bytes": 8930,
+      "sha256": "b8b79bb1c365dd3df6ef40129cdd0b8251a175ec5622eda34c464522f27eb6e7"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/mdp/v111_recovery.py",
+      "bytes": 7051,
+      "sha256": "30ad9ce2642d001aed3cca5738c2d735a29b207ba507c7da50acebc8eee7899c"
+    },
+    {
+      "path": "M20_perception_Lidar_rl/source/rl_training/rl_training/v111_recovery_runner.py",
+      "bytes": 5319,
+      "sha256": "fb527f4d7195c965dd0765bc545ad74b27a926bb4a7841bc0f3ae02f75598629"
+    },
+    {
+      "path": "PUBLISH_MANIFEST.json",
+      "bytes": 119232,
+      "sha256": "c5da5f10f434229de9eca4803a71a104f2f7181718d6bfa9c8ce4a02afa60cd3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4806,
+      "sha256": "89e36801100b127f1452cf9bd4460b0ce3617875e420c3d5dc399b28c6a4de87"
+    }
+  ]
+}

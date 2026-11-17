@@ -1,5 +1,32 @@
 # 仓库迁移与当前入口
 
+## 2026-11-17 本机更新
+
+当前入口为 `scripts/train_m20_v111_guarded.sh`：4096 环境、每 100 次更新评测、目标追加 30000 更新；有效行为失败记录后继续，同一策略和优化器持续学习。运行异常、无效评测和资源不足仍可停止。训练由用户手动启动。
+
+本次 `logs` 仅分发用户指定的 `M20-V11.1-AscentRecovery/2026-11-17_14-59-02_063111_guarded_30000_from35300/model_36500.pt`。其真实配置、模型哈希和历史评测在 `data/m20_recovery/published_36500/`；MuJoCo 加载时显式传 `--config-dir` 指向该目录的 `params/`。原始 35300 保留为默认初始化和冻结教师。36500 尚未通过全部行为条件，没有进行降噪训练。
+
+原模型评测的迁移基线位于 `data/m20_recovery/baseline_v2/`，包含结果与两份来源 manifest，不含完整轨迹。克隆后从仓库根目录、在相容的 Isaac Lab 环境中预检查：
+
+```bash
+git submodule update --init --recursive
+python3 -m pip install -e M20_perception_Lidar_rl/source/rl_training --no-deps
+cd M20_perception_Lidar_rl
+export M20_PYTHON=python3
+bash scripts/train_m20_v111_guarded.sh --check-only \
+  --total-updates 30000 --segment-updates 100 --num_envs 4096 \
+  --baseline-results "$PWD/data/m20_recovery/baseline_v2/results.json" \
+  --output "$PWD/artifacts/recovery_4096_preflight"
+```
+
+最新手动命令、验证边界见 [连续训练说明](v111_guarded_training_20261117.md)，问答与任务要求见 [本机交接文件](../../CODEX_SESSION_HANDOFF_20261117.md)。当前本机记录的 Isaac Lab/isaaclab-rl 版本为 0.54.3/0.4.7，目标主机应实际核对；下面的旧版本记录不能代替环境锁。
+
+首次快照清单 `PUBLISH_MANIFEST.json` 保留为历史记录，本次更新见根目录 `PUBLISH_UPDATE_20261117.json`。本地历史任务、权重与日志保留，提交时只选择允许发布的内容。
+
+## 以下为原主机首次迁移记录
+
+以下的“唯一模型”“尚未训练”“失败后停止”、256 环境与旧启动流程仅描述首次迁移时状态，已由上面的本机更新和本轮用户要求覆盖。文中 `tools/` 导出工具没有随首次快照分发，不是本次 GitHub 更新的执行入口。
+
 GitHub 快照保留同级 `M20_perception_Lidar_rl/` 与 `mujoco_validation/`。本地任务文件、全部旧模型及训练记录没有删除；发布时通过 `tools/github_export_policy.json` 过滤。完整导出清单和哈希见快照根目录 `PUBLISH_MANIFEST.json`。旧 Git 历史不随当前文件快照上传，避免历史中的大文件重新进入新仓库。
 
 ## 唯一分发模型

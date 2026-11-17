@@ -89,7 +89,13 @@ def entry_state(env):
 
 def entry_penalty(env):
     s, cfg = entry_state(env), env.cfg.v111_entry_flat
-    return -(s['entry_overshoot'] + cfg.entry_speed_cost_scale*s['entry_speed_cost'])
+    if hasattr(env.cfg, 'v111_recovery'):
+        # v11_state has already updated finish_recovery. Convert the one-off
+        # event to a rate because RewardManager multiplies rewards by step_dt.
+        overshoot = env._v111_recovery['entry_cost_event']/float(env.step_dt)
+    else:
+        overshoot = s['entry_overshoot']
+    return -(overshoot + cfg.entry_speed_cost_scale*s['entry_speed_cost'])
 
 
 def entry_support_reward(env):
@@ -124,10 +130,19 @@ def flat_state(env):
 
 def flat_penalty(env):
     s = flat_state(env)
-    return -(s['workspace_cost']+s['cost'])*s['blend']
+    cost = s['workspace_cost']+s['cost']
+    if hasattr(env.cfg, 'v111_recovery'):
+        # A soft cap keeps useful differences near the stretched baseline;
+        # unlike an exponential it does not rapidly flatten those differences.
+        cap = env.cfg.v111_recovery.flat_cost_cap
+        cost = cap*cost/(cap+cost)
+    return -cost*s['blend']
 
 
 def drive_multiplier(env):
+    if hasattr(env.cfg, 'v111_recovery'):
+        # Preserve the native locomotion objective independently of shape.
+        return torch.ones(env.num_envs, device=env.device)
     cfg, flat = env.cfg.v111_entry_flat, flat_state(env)
     # Planar-ground posture only. B1 failure is penalized at the event;
     # retaining its history must not suppress speed on any later stair.

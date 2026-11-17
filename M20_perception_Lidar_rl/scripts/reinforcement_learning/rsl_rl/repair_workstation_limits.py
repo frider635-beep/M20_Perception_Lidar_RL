@@ -20,7 +20,7 @@ def validate(num_envs, updates, *, distributed=False, ledger=None):
     if distributed:
         raise ValueError('Repair stages on this workstation use one GPU process')
     if type(n) is not int or not 1 <= n <= cfg['max_num_envs']:
-        raise ValueError(f"Repair environments must be 1..{cfg['max_num_envs']} (requested {n}); larger training triggered a workstation failure")
+        raise ValueError(f"Repair environments must be 1..{cfg['max_num_envs']} (requested {n}); outside the configured workstation limit")
     if type(k) is not int or not 1 <= k <= cfg['max_updates_per_stage']:
         raise ValueError(f"Repair stages are limited to {cfg['max_updates_per_stage']} updates (requested {k}); validate MuJoCo before starting another stage")
     return n, k

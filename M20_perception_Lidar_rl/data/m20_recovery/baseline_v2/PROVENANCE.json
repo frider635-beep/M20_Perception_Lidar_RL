@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "published_date": "2026-11-17",
+  "source_directory": "artifacts/guarded_30000_baseline_20261117_v2",
+  "checkpoint_sha256": "4aefe17ddc279ee809ff6257862ba4e28bb1b19ad48b11a5948b116256d61f8b",
+  "copy_mode": "Exact original results and manifests; no trajectory files copied",
+  "files": [
+    {
+      "path": "results.json",
+      "bytes": 25808,
+      "sha256": "4efb160011f052674796e1b772ee10facf35fc4cae3592cd1e33d58a7f0cc789"
+    },
+    {
+      "path": "standing/manifest.json",
+      "bytes": 3312,
+      "sha256": "45f92621fcd46ad49c33b98bd2aa158c3b1ab1b65f04257b9eb162524fd7d1b5"
+    },
+    {
+      "path": "keyboard/manifest.json",
+      "bytes": 3283,
+      "sha256": "7d3e8a9f1fe97d08b0adf06a190f2a9abeadb5e1c43b1031b803d3478cc87421"
+    }
+  ]
+}
