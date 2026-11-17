@@ -1,0 +1,33 @@
+{
+  "authority": "docs/v133_adjacent_transition_contract.md",
+  "task": "M20-Stair-V13.3-V11FD-FromScratch-v0",
+  "actor_abi": "native V13 63D to 16D",
+  "training": "random initialization only",
+  "reward_acceptance": [
+    "multi-frame contact-backed support on a live ascending tread emits once per front side and world-space face",
+    "scanner-slot identity changes restart confirmation and previously credited treads cannot be replayed",
+    "exact-adjacent opposite-side historical progress is visible before completion and is fully clawed back on failure or episode end",
+    "the chain detector does not depend on V11 landing reward eligibility",
+    "both mirror three-riser chains settle",
+    "same-tread follower neither settles nor clears a valid chain",
+    "repeated side receives a bounded style cost and cannot settle",
+    "skipped face receives a bounded style cost and cannot settle",
+    "simultaneous completion receives a bounded style cost and cannot settle"
+  ],
+  "descent_acceptance": [
+    "no persistent descending-tread identity",
+    "no front-to-rear completion reward or curriculum gate",
+    "official DeepRobotics M20 Rough rewards are reconstructed on the full descending terrain column",
+    "V11 route, impact and descent-specific rewards are zero on descending terrain",
+    "official distance-only terrain curriculum is used on descending terrain",
+    "front and rear legs negotiate descending edges without a prescribed contact sequence"
+  ],
+  "runtime_acceptance": [
+    "all six V13 soft reward terms remain active",
+    "chain state does not enter actor observation",
+    "finite Isaac environment step",
+    "complete PPO rollout and update"
+  ],
+  "reference_probe_acceptance": "V13 model_5000 produces nonzero stable-support seeds and nonzero adjacent transitions without PPO updates",
+  "checkpoint_acceptance": "freeze-evaluate every saved checkpoint on fixed ascent and descent, report separate leaders, and select one qualified checkpoint by chain precision, chain count, then velocity"
+}

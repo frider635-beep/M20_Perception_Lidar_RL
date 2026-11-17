@@ -1,0 +1,9 @@
+{
+  "minimum_speed_ratio": 0.9,
+  "maximum_flat_speed_ratio": 1.1,
+  "maximum_flat_reach_p95": 0.1,
+  "expected_treads": [0.26, 0.30],
+  "expected_speeds": [0.5, 0.7, 1.0],
+  "stair_height": 0.16,
+  "scope": "Every front wheel supports every tread, complete flight, no falls, post-entry speed and compact flat stance. Heading drift is logged separately; this gate does not certify real-robot readiness."
+}

@@ -1,0 +1,12 @@
+{
+  "checkpoint": "model_35300.pt",
+  "sha256": "4aefe17ddc279ee809ff6257862ba4e28bb1b19ad48b11a5948b116256d61f8b",
+  "bytes": 7877207,
+  "training_run": "M20-V11.1-V11FD-RearPosture/2026-09-26_12-13-33_v111_native_ascent_from_v11fd29999_e8192_r24",
+  "config_sha256": {
+    "env.yaml": "78365300411154b8a73c60e19025dffaa5ab80f7537f4d6192e5dc34007927a7",
+    "agent.yaml": "f8b2795e4038fc714c6c6f82b7415da2637fba0f9495c9d8ed6541d8dc4a24be"
+  },
+  "status": "Original baseline, unchanged weights. Known tread-skipping and flat-stance issues; recovery code has not been trained.",
+  "selection": "Explicit user selection; not a claim that this is the newest historical experiment"
+}

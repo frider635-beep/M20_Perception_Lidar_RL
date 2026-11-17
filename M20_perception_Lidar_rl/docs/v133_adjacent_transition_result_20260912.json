@@ -1,0 +1,50 @@
+{
+  "candidate": "Historical V13.3 adjacent-transition acquisition (76D, superseded)",
+  "decision": "REJECTED",
+  "acceptance_ledger": "superseded 2026-09-13; retained as historical evidence only",
+  "superseded_by": "docs/v133_adjacent_transition_contract.md",
+  "checkpoint": "logs/rsl_rl/M20-V13.3-V11FD-AdjacentTransition-Acquisition/2026-09-12_11-59-51_v133_adjacent_transition_acquisition_gate/model_299.pt",
+  "console": "logs/v133_adjacent_transition_acquisition_20260912_1142.console.log",
+  "completed_iterations": 300,
+  "final_rollout": {
+    "iteration": 299,
+    "actor_migration_max_abs_error": 0.0,
+    "lift_count": 807,
+    "clearance_count": 26,
+    "crossing_count": 2,
+    "support_count": 0,
+    "ordered_adjacent_completion_count": 0,
+    "fl_ordered_completion_count": 0,
+    "fr_ordered_completion_count": 0,
+    "skip_per_encounter": 0.0762,
+    "deploy_reward_target_agreement": 0.8757,
+    "finite_checkpoint_parameters": true,
+    "traceback_in_successful_run": false
+  },
+  "training_rollout_windows": [
+    {"iterations": "0-49", "support_count": 19, "completion_count": 19, "fl_count": 12, "fr_count": 7},
+    {"iterations": "50-99", "support_count": 12, "completion_count": 11, "fl_count": 5, "fr_count": 6},
+    {"iterations": "100-149", "support_count": 8, "completion_count": 7, "fl_count": 0, "fr_count": 7},
+    {"iterations": "150-199", "support_count": 1, "completion_count": 1, "fl_count": 0, "fr_count": 1},
+    {"iterations": "200-249", "support_count": 0, "completion_count": 0, "fl_count": 0, "fr_count": 0},
+    {"iterations": "250-299", "support_count": 0, "completion_count": 0, "fl_count": 0, "fr_count": 0}
+  ],
+  "last_nonzero_support_and_completion_iteration": 182,
+  "lifetime_training_rollout_counts": {
+    "support": 40,
+    "ordered_adjacent_completion": 38
+  },
+  "rejection_reasons": [
+    "The final rollout has no stable support or ordered adjacent completion on either side.",
+    "Deploy/reward target agreement is below the frozen 0.98 threshold.",
+    "Physical completion collapses to zero for the final 100 consecutive rollouts.",
+    "Upstream milestone rewards can remain net-positive after a wrong or skipped completion."
+  ],
+  "next_candidate_requirements": [
+    "Escrow all positive milestones and settle them only on contact-backed ordered adjacent completion.",
+    "Freeze the original V13 motor mapping during the bounded phase-cue acquisition gate.",
+    "Instrument and resolve deploy/reward target identity mismatches before another training run.",
+    "Evaluate the saved checkpoint with a deterministic fixed-seed no-update rollout.",
+    "Add checkpoint SHA-256 identity and completion replay protection to the gate."
+  ]
+}

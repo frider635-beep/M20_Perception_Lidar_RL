@@ -1,0 +1,4 @@
+* text=auto
+*.sh text eol=LF
+*.pt -text
+*.npz -text

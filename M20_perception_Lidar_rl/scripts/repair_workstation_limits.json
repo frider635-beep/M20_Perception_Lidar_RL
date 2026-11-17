@@ -1,0 +1,7 @@
+{
+  "default_num_envs": 256,
+  "max_num_envs": 256,
+  "default_updates": 100,
+  "max_updates_per_stage": 200,
+  "basis": "4096-env AdjacentRepair triggered a user-confirmed disk disconnect or reboot. The later 256-env run remained active for over 15 hours, but its MuJoCo ascent degraded during long training. This count is a conservative operational limit, not proof of hardware safety. Every stage needs resource accounting and external MuJoCo acceptance before continuation."
+}

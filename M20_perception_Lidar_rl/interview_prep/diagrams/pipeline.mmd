@@ -1,0 +1,31 @@
+flowchart LR
+    lidar[LiDAR / Point Cloud] --> map[Local Elevation / PGTT Map]
+    map --> geom10[V10 First Riser B/H/D]
+    map --> geom11[V11 Two-Riser B1/H1/D1 + B2/H2/D2]
+
+    official[Official M20 57D Proprioception + Command] --> actor10[V10 60D Actor]
+    geom10 --> actor10
+    actor10 --> action[16D M20 Action: 12 Joint Targets + 4 Wheel Speeds]
+
+    official --> actor11[V11/V11-FD/V12 63D Actor]
+    geom11 --> actor11
+    actor11 --> action
+
+    map --> reward[V11/V12 Reward and Critic Side Geometry]
+    reward --> ppo[RSL-RL PPO]
+    ppo --> actor11
+
+    actor11 --> deploy[Deployable Policy ABI]
+    deploy --> robot[M20 PRO Wheel-Leg Locomotion]
+
+    subgraph v11_state[V11 Landing State]
+        clearance[Clearance Escrow]
+        crossing[Face Crossing]
+        support[Upper-Tread Support]
+        collision[Confirmed Front-Riser Collision]
+        clearance --> crossing --> support
+        collision --> terminate[Fail-Closed Termination]
+    end
+
+    reward --> v11_state
+    v11_state --> ppo

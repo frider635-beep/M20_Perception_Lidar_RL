@@ -1,0 +1,2 @@
+# Preserve the migrated robot MJCF byte-for-byte for source hash verification.
+assets/m20/mjcf/*.xml -text whitespace=cr-at-eol

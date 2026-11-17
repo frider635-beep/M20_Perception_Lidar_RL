@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 小区安全通道式直跑下楼梯：顶部起步平台、楼梯、底部出口走廊，两侧实体墙。
+     参考 stairs_ascent_walls.xml；经 terrain_loader.py 加载，不含机器人。
+     修改 custom 中的 data 后重新启动部署。尺寸单位 m，均为全尺寸。 -->
+<mujoco model="descent_stairwell_terrain">
+  <compiler angle="radian"/>
+  <custom>
+    <text name="terrain_kind" data="descent"/>
+    <!-- 下楼当前使用实心带踢面台阶；open_risers 必须保持 0。 -->
+    <numeric name="open_risers" data="0"/>
+    <!-- 0：无墙；1：左右两侧实体碰撞墙，出入口不封堵。 -->
+    <numeric name="walls_enabled" data="1"/>
+    <!-- width 是踏面全宽；两墙内侧净宽 = width + 2 * wall_gap。 -->
+    <numeric name="width" data="1.4"/>
+    <numeric name="wall_gap" data="0.0"/>
+    <!-- 墙高为高出相邻踏面的高度；墙顶随台阶下降，墙底延伸至 z=0。
+         覆盖顶部起步平台、全部台阶与底部出口走廊。 -->
+    <numeric name="wall_height" data="2.0"/>
+    <numeric name="wall_thickness" data="0.18"/>
+    <!-- 滑动 / 扭转 / 滚动摩擦，作用于踏面、墙和底面。 -->
+    <numeric name="friction" data="1.0 0.01 0.01"/>
+    <!-- 世界 +X 下楼，+Y 左侧。出生 z 自动适配顶部实际支撑面。 -->
+    <numeric name="spawn_xy" data="-1.0 0.0"/>
+    <numeric name="spawn_yaw_deg" data="0"/>
+    <numeric name="start_x" data="0.25"/>
+    <!-- 带墙下楼的顶部起步平台长度；出生点应位于首阶之前的平台内。
+         顶部高度 = step_height * step_count，默认 2.04 m。 -->
+    <numeric name="approach_length" data="2.0"/>
+    <numeric name="step_height" data="0.17"/>
+    <numeric name="tread_depth" data="0.30"/>
+    <numeric name="step_count" data="12"/>
+    <!-- 带墙下楼的底部出口走廊长度，出口支撑面为 z=0。 -->
+    <numeric name="platform_length" data="2.0"/>
+  </custom>
+</mujoco>

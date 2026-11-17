@@ -1,0 +1,269 @@
+"""Physical-riser identity settlement for V13.5 ascent."""
+
+from __future__ import annotations
+
+import torch
+
+
+def v135_classify_riser_completion(
+    seeded, expected_side, completed_side, completion, simultaneous,
+    longitudinal_error, lateral_error, *, longitudinal_tolerance, lateral_tolerance,
+):
+    """Classify a completion without allowing an error to advance the target."""
+    target = completion & (longitudinal_error.abs() <= longitudinal_tolerance) & (
+        lateral_error.abs() <= lateral_tolerance
+    )
+    single = completion & ~simultaneous
+    side_ok = ~seeded | (completed_side == expected_side)
+    valid = target & single & side_ok
+    wrong_side = target & completion & ~valid
+    ahead = completion & (longitudinal_error > longitudinal_tolerance)
+    behind = completion & (longitudinal_error < -longitudinal_tolerance)
+    return {
+        "valid": valid,
+        "seed": valid & ~seeded,
+        "ordered": valid & seeded,
+        "wrong_side": wrong_side,
+        "duplicate": behind,
+        "skip": ahead & ~simultaneous,
+        "dual_skip": ahead & simultaneous,
+    }
+
+
+def v135_update_chain_failure(previous, skip, dual_skip, irrecoverable_behind):
+    """Latch strict-chain failure without terminating physical locomotion."""
+    return previous | skip | dual_skip | irrecoverable_behind
+
+
+def v135_irrecoverable_behind(target_root_distance, valid_completion, active, *, threshold):
+    """A valid completion wins over the old target becoming rearward that frame."""
+    return active & ~valid_completion & (target_root_distance < float(threshold))
+
+
+def v135_match_locked_target_edges(
+    edge_world_xy, edge_valid, root_world_xy, target_world_xy, locked_forward_world_xy,
+    *, step_width, longitudinal_tolerance, lateral_tolerance,
+):
+    """Match P1/P2 in the locked stair frame, independent of current body yaw."""
+    forward = locked_forward_world_xy / locked_forward_world_xy.norm(dim=1, keepdim=True).clamp_min(1e-6)
+    lateral_axis = torch.stack((-forward[:, 1], forward[:, 0]), 1)
+    desired_world = torch.stack((target_world_xy, target_world_xy + float(step_width) * forward), 1)
+    delta = edge_world_xy[:, :, None, :] - desired_world[:, None, :, :]
+    longitudinal_error = (delta * forward[:, None, None, :]).sum(-1).abs()
+    lateral_error = (delta * lateral_axis[:, None, None, :]).sum(-1).abs()
+    eligible = edge_valid[:, :, None] & (longitudinal_error <= float(longitudinal_tolerance)) & (
+        lateral_error <= float(lateral_tolerance))
+    score = torch.where(eligible, longitudinal_error, torch.full_like(longitudinal_error, float("inf")))
+    slot = score.argmin(1)
+    valid = eligible.gather(1, slot[:, None, :]).squeeze(1)
+    root_delta = desired_world - root_world_xy[:, None, :]
+    distance = (root_delta * forward[:, None, :]).sum(-1)
+    return {"valid": valid, "slot": slot, "distance": distance}
+
+
+def _init(env):
+    if hasattr(env, "_v135_riser_identity"):
+        return
+    n, d = env.num_envs, env.device
+    z = lambda: torch.zeros(n, device=d, dtype=torch.bool)
+    env._v135_riser_identity = {
+        "last_episode_length": env.episode_length_buf.clone(),
+        "target_valid": z(), "seeded": z(),
+        "ordered_chain_failed": z(),
+        "b1_candidate_valid": z(),
+        "b1_candidate_world_xy": torch.zeros((n, 2), device=d),
+        "b1_candidate_frames": torch.zeros(n, device=d, dtype=torch.long),
+        "seeded_before": z(),
+        "target_world_xy": torch.zeros((n, 2), device=d),
+        "forward_world_xy": torch.zeros((n, 2), device=d),
+        "target_id": torch.ones(n, device=d, dtype=torch.long),
+        "expected_side": torch.full((n,), -1, device=d, dtype=torch.long),
+        "expected_side_before": torch.full((n,), -1, device=d, dtype=torch.long),
+        "target_match": z(),
+        "overstep_best": torch.zeros(n, device=d),
+        "overstep_delta": torch.zeros(n, device=d),
+        **{k: z() for k in ("valid", "seed", "ordered", "wrong_side", "duplicate", "skip", "dual_skip")},
+        **{f"{k}_count": torch.zeros((), device=d, dtype=torch.long) for k in
+           ("valid", "ordered", "wrong_side", "duplicate", "skip", "dual_skip")},
+        "chain_failed_count": torch.zeros((), device=d, dtype=torch.long),
+    }
+    env._v135_riser_identity_last_step = -1
+
+
+def v135_riser_identity_state(env, sensor_cfg=None):
+    from .v11_continuous import v11_state
+
+    _init(env)
+    step = int(getattr(env, "common_step_counter", 0))
+    if env._v135_riser_identity_last_step == step:
+        return env._v135_riser_identity
+    s = env._v135_riser_identity
+    reset = env.episode_length_buf < s["last_episode_length"]
+    for k, value in (("target_valid", False), ("seeded", False), ("ordered_chain_failed", False),
+                     ("b1_candidate_valid", False), ("b1_candidate_frames", 0), ("target_id", 1),
+                     ("expected_side", -1), ("overstep_best", 0.0)):
+        s[k][reset] = value
+    s["target_world_xy"][reset] = 0.0
+    s["b1_candidate_world_xy"][reset] = 0.0
+    s["forward_world_xy"][reset] = 0.0
+    base = v11_state(env) if sensor_cfg is None else v11_state(env, sensor_cfg=sensor_cfg)
+    landing = base["landing"]
+    terrain_types = env.scene.terrain.terrain_types
+    ascending_ids = torch.tensor(
+        tuple(int(value) for value in env.cfg.v11_perception.ascending_stair_terrain_type_ids),
+        device=env.device, dtype=terrain_types.dtype,
+    )
+    command_x = env.command_manager.get_command("base_velocity")[:, 0]
+    ascent = (terrain_types[:, None] == ascending_ids[None, :]).any(1) & (
+        command_x > float(env.cfg.v11_perception.forward_command_threshold)
+    )
+
+    asset = env.scene["robot"]
+    w, x, y, z = asset.data.root_quat_w.unbind(-1)
+    yaw = torch.atan2(2 * (w * z + x * y), 1 - 2 * (y.square() + z.square()))
+    forward = torch.stack((torch.cos(yaw), torch.sin(yaw)), dim=1)
+    candidate = ascent & landing["target_active"] & ~s["target_valid"]
+    candidate_error = torch.linalg.norm(
+        landing["reference_riser_world_xy"] - s["b1_candidate_world_xy"], dim=1)
+    stable = candidate & s["b1_candidate_valid"] & (
+        candidate_error <= float(env.cfg.v135_riser_identity.b1_world_stability_tolerance))
+    s["b1_candidate_frames"] = torch.where(
+        candidate, torch.where(stable, s["b1_candidate_frames"] + 1, torch.ones_like(s["b1_candidate_frames"])),
+        torch.zeros_like(s["b1_candidate_frames"]),
+    )
+    replace_candidate = candidate & ~stable
+    s["b1_candidate_world_xy"] = torch.where(
+        replace_candidate[:, None], landing["reference_riser_world_xy"], s["b1_candidate_world_xy"])
+    s["b1_candidate_valid"] = candidate
+    acquire = candidate & (s["b1_candidate_frames"] >= int(env.cfg.v135_riser_identity.b1_confirmation_frames))
+    s["target_world_xy"] = torch.where(acquire[:, None], landing["reference_riser_world_xy"], s["target_world_xy"])
+    s["forward_world_xy"] = torch.where(acquire[:, None], forward, s["forward_world_xy"])
+    s["target_valid"] |= acquire
+
+    delta = landing["reference_riser_world_xy"] - s["target_world_xy"]
+    lateral_axis = torch.stack((-s["forward_world_xy"][:, 1], s["forward_world_xy"][:, 0]), dim=1)
+    longitudinal = (delta * s["forward_world_xy"]).sum(1)
+    lateral = (delta * lateral_axis).sum(1)
+    chain_active = ~s["ordered_chain_failed"]
+    completion = ascent & s["target_valid"] & chain_active & landing["landing_event"]
+    simultaneous = completion & landing["candidate_ready"].all(1)
+    s["seeded_before"] = s["seeded"].clone()
+    s["expected_side_before"] = s["expected_side"].clone()
+    s["target_match"] = s["target_valid"] & (longitudinal.abs() <= float(env.cfg.v135_riser_identity.longitudinal_tolerance)) & (
+        lateral.abs() <= float(env.cfg.v135_riser_identity.lateral_tolerance)
+    )
+    events = v135_classify_riser_completion(
+        s["seeded"], s["expected_side"], landing["responsible"], completion, simultaneous,
+        longitudinal, lateral,
+        longitudinal_tolerance=float(env.cfg.v135_riser_identity.longitudinal_tolerance),
+        lateral_tolerance=float(env.cfg.v135_riser_identity.lateral_tolerance),
+    )
+    for k, value in events.items():
+        s[k] = value
+    target_delta = s["target_world_xy"] - asset.data.root_pos_w[:, :2]
+    target_root_distance = (target_delta * s["forward_world_xy"]).sum(1)
+    irrecoverable = v135_irrecoverable_behind(
+        target_root_distance, events["valid"], ascent & s["target_valid"],
+        threshold=float(env.cfg.v135_riser_identity.irrecoverable_behind_distance))
+    failed_before = s["ordered_chain_failed"].clone()
+    s["ordered_chain_failed"] = v135_update_chain_failure(
+        failed_before, events["skip"], events["dual_skip"], irrecoverable)
+    s["chain_failed_count"] += (~failed_before & s["ordered_chain_failed"]).sum()
+    valid = events["valid"]
+    s["expected_side"] = torch.where(events["seed"], 1 - landing["responsible"], s["expected_side"])
+    s["expected_side"] = torch.where(events["ordered"], 1 - s["expected_side"], s["expected_side"])
+    s["seeded"] |= events["seed"]
+    s["target_world_xy"] = torch.where(
+        valid[:, None],
+        s["target_world_xy"] + float(env.cfg.v135_riser_identity.step_width) * s["forward_world_xy"],
+        s["target_world_xy"],
+    )
+    s["target_id"] += valid.long()
+
+    wheel_world = asset.data.body_pos_w[:, env._v11_front_body_ids, :2]
+    wheel_forward = ((wheel_world - s["target_world_xy"][:, None, :]) * s["forward_world_xy"][:, None, :]).sum(2)
+    onset = float(env.cfg.v135_riser_identity.step_width) - float(env.cfg.v135_riser_identity.overstep_margin)
+    potential = ((wheel_forward.amax(1) - onset) / float(env.cfg.v135_riser_identity.overstep_margin)).clamp(0, 1)
+    active = ascent & s["target_valid"] & ~s["ordered_chain_failed"] & ~valid
+    best = torch.where(active, torch.maximum(s["overstep_best"], potential), s["overstep_best"])
+    s["overstep_delta"] = (best - s["overstep_best"]).clamp_min(0)
+    s["overstep_best"] = torch.where(valid, torch.zeros_like(best), best)
+    for k in ("valid", "ordered", "wrong_side", "duplicate", "skip", "dual_skip"):
+        s[f"{k}_count"] += s[k].sum()
+    s["last_episode_length"] = env.episode_length_buf.clone()
+    env._v135_riser_identity_last_step = step
+    return s
+
+
+def v135_valid_riser_completion_reward(env, sensor_cfg=None):
+    return v135_riser_identity_state(env, sensor_cfg)["valid"].float()
+
+
+def v135_wrong_side_riser_reward(env, sensor_cfg=None):
+    return v135_riser_identity_state(env, sensor_cfg)["wrong_side"].float()
+
+
+def v135_duplicate_riser_reward(env, sensor_cfg=None):
+    return v135_riser_identity_state(env, sensor_cfg)["duplicate"].float()
+
+
+def v135_skip_riser_reward(env, sensor_cfg=None):
+    s = v135_riser_identity_state(env, sensor_cfg)
+    return (s["skip"] | s["dual_skip"]).float()
+
+
+def v135_dual_skip_riser_reward(env, sensor_cfg=None):
+    return v135_riser_identity_state(env, sensor_cfg)["dual_skip"].float()
+
+
+def v135_overstep_progress_reward(env, sensor_cfg=None):
+    return v135_riser_identity_state(env, sensor_cfg)["overstep_delta"]
+
+
+def v135_target_actor_perception(env, sensor_cfg=None):
+    """Project the strict target and its adjacent successor into the unchanged 6D ABI."""
+    from .v11_continuous import v11_state
+    base = v11_state(env) if sensor_cfg is None else v11_state(env, sensor_cfg=sensor_cfg)
+    strict = v135_riser_identity_state(env, sensor_cfg)
+    pool = base["riser_pool"]
+    asset = env.scene["robot"]
+    match = v135_match_locked_target_edges(
+        base["riser_pool_world_xy"], pool["valid"], asset.data.root_pos_w[:, :2],
+        strict["target_world_xy"], strict["forward_world_xy"],
+        step_width=float(env.cfg.v135_riser_identity.step_width),
+        longitudinal_tolerance=float(env.cfg.v135_riser_identity.longitudinal_tolerance),
+        lateral_tolerance=float(env.cfg.v135_riser_identity.lateral_tolerance))
+    slot = match["slot"]
+    height = pool["riser_height"].gather(1, slot)
+    valid = strict["target_valid"][:, None] & match["valid"]
+    desired = match["distance"]
+    zero = torch.zeros_like(desired)
+    return torch.stack((
+        valid[:, 0].float(), torch.where(valid[:, 0], height[:, 0], zero[:, 0]),
+        torch.where(valid[:, 0], desired[:, 0], zero[:, 0]),
+        valid[:, 1].float(), torch.where(valid[:, 1], height[:, 1], zero[:, 1]),
+        torch.where(valid[:, 1], desired[:, 1], zero[:, 1]),
+    ), 1)
+
+
+def v135_cancel_invalid_v13_completion(env, sensor_cfg=None):
+    from .v13_alternation import v13_alternation_state
+    strict = v135_riser_identity_state(env, sensor_cfg)
+    native = v13_alternation_state(env, sensor_cfg)
+    invalid = strict["wrong_side"] | strict["duplicate"] | strict["skip"] | strict["dual_skip"]
+    return (invalid & native["compliant_event"]).float()
+
+
+def v135_riser_identity_metric(env, env_ids, key, sensor_cfg=None):
+    s = v135_riser_identity_state(env, sensor_cfg)
+    if key == "target_id_mean": return s["target_id"].float().mean()
+    if key == "target_valid_rate": return s["target_valid"].float().mean()
+    if key == "chain_failed_rate": return s["ordered_chain_failed"].float().mean()
+    if key == "ordered_alternation_rate": return s["ordered_count"].float() / s["valid_count"].clamp_min(1).float()
+    if key.endswith("_rate"):
+        name = key[:-5]
+        return s[f"{name}_count"].float() / s["valid_count"].clamp_min(1).float()
+    raise ValueError(key)
+
+
+__all__ = [name for name in globals() if name.startswith("v135_")]

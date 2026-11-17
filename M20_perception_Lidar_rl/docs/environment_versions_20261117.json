@@ -1,0 +1,21 @@
+{
+  "python": "3.11.15",
+  "packages": {
+    "isaaclab": "0.47.2",
+    "isaaclab-rl": "0.4.4",
+    "isaacsim": "5.1.0.0",
+    "torch": "2.7.0+cu128",
+    "rsl-rl-lib": "5.0.1",
+    "mujoco": "3.3.7",
+    "tensordict": "0.12.1",
+    "PyYAML": "6.0.2",
+    "toml": "0.10.2",
+    "gymnasium": "1.2.0",
+    "cusrl": "1.2.2",
+    "psutil": "5.9.8",
+    "colorama": "0.4.6",
+    "xacrodoc": "2.0.1",
+    "pandas": "3.0.2"
+  },
+  "scope": "Selected installed package metadata from the CPU checks; not a full environment lock file. Isaac runtime and new PPO training were not exercised."
+}

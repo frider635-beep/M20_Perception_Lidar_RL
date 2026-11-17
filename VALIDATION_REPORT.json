@@ -1,0 +1,21 @@
+{
+  "tests": {
+    "repair_cpu": 39,
+    "mujoco_contract": 14,
+    "total": 53,
+    "location": "The filtered snapshot without historical logs or checkpoints"
+  },
+  "migration_preflight": "Passed in the snapshot with the original 35300 and exact saved params",
+  "robot_assets": "Fetched and checked out from public upstream at 18192847e16ab85c056440072fcc5844cef43856",
+  "checkpoint_count": 1,
+  "checkpoint_sha256": "4aefe17ddc279ee809ff6257862ba4e28bb1b19ad48b11a5948b116256d61f8b",
+  "previous_local_weight_files_verified_present": 3407,
+  "local_source_files_deleted": 0,
+  "training_started": false,
+  "skipped": [
+    "Isaac runtime wiring and PPO updates: user requested no training",
+    "Target host load and real robot acceptance"
+  ],
+  "formatting": "Checks on changed source passed. A full initial-tree whitespace scan reports pre-existing formatting in unchanged historical files; those files were preserved without reformatting.",
+  "launcher_cli": "Executable shell launcher completed 1.2s headless physical simulation in the filtered snapshot; startup/load check only, not stair acceptance"
+}

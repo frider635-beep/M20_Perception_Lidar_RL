@@ -1,0 +1,2276 @@
+{
+  "retained35300_complete": [
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 0.5,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        5.176511085797088,
+        0.24690323866118258,
+        0.5591987388893211
+      ],
+      "mean_velocity_x": 0.5193352315377833,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        0.17371293380774594,
+        0.21078262353723756,
+        -0.2579220347846352,
+        -0.24433036863734992
+      ],
+      "p95_max_abs_reach": 0.2659367872753192,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 5.709624261222685,
+      "mean_yaw_rate": 0.009812380508402788
+    },
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 0.7,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        7.2994116430380265,
+        0.3326448940514859,
+        0.559015448838008
+      ],
+      "mean_velocity_x": 0.6975911069282514,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        0.16806524637234632,
+        0.205623102477168,
+        -0.2704900831727604,
+        -0.2580486624592284
+      ],
+      "p95_max_abs_reach": 0.2790463901466982,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 5.702256233910751,
+      "mean_yaw_rate": 0.010040182167178748
+    },
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        10.685267011069808,
+        0.42586125525546714,
+        0.5565034841968519
+      ],
+      "mean_velocity_x": 0.9755959114207249,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        0.1571507427062338,
+        0.19470494616830075,
+        -0.27951154858716004,
+        -0.2658422749809792
+      ],
+      "p95_max_abs_reach": 0.2891614917851176,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 6.014494824780651,
+      "mean_yaw_rate": 0.011184769080952329
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 0.5,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        2,
+        2
+      ],
+      "both_front_first_tread": false,
+      "any_front_skipped": true,
+      "simulated_seconds": 12.659999999998423,
+      "final_position": [
+        4.012162957088007,
+        -0.4001004845148176,
+        2.440533530868684
+      ],
+      "mean_velocity_x": 0.47673926849384507,
+      "later_stairs_mean_velocity_x": 0.48457373745703003,
+      "mean_reach_per_leg": [
+        0.11783531852634488,
+        0.016692863069224573,
+        -0.12982122628706902,
+        -0.22365133908241216
+      ],
+      "p95_max_abs_reach": 0.29233634850999674,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 7.780998328683974,
+      "mean_yaw_rate": 0.0065424540501938765,
+      "front_support_sequences": [
+        [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 0.7,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        2,
+        2
+      ],
+      "both_front_first_tread": false,
+      "any_front_skipped": true,
+      "simulated_seconds": 9.680000000000074,
+      "final_position": [
+        4.034331480931506,
+        -0.34243128631446573,
+        2.4399981004405604
+      ],
+      "mean_velocity_x": 0.6365990884672812,
+      "later_stairs_mean_velocity_x": 0.6397165589862528,
+      "mean_reach_per_leg": [
+        0.12041191239074751,
+        0.004796841321480885,
+        -0.14011234573190204,
+        -0.25769624692495263
+      ],
+      "p95_max_abs_reach": 0.32758759525123954,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 7.405357406288404,
+      "mean_yaw_rate": -0.001455188594713648,
+      "front_support_sequences": [
+        [
+          2,
+          4,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          2,
+          4,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          1,
+          3,
+          5,
+          7
+        ],
+        [
+          1,
+          3,
+          5,
+          6
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        2,
+        4
+      ],
+      "both_front_first_tread": false,
+      "any_front_skipped": true,
+      "simulated_seconds": 7.2400000000007525,
+      "final_position": [
+        4.00740012459852,
+        -0.2280706050185684,
+        2.4484689393160286
+      ],
+      "mean_velocity_x": 0.8908120681535037,
+      "later_stairs_mean_velocity_x": 0.880607449499311,
+      "mean_reach_per_leg": [
+        0.11235302984672173,
+        -0.02400849950124406,
+        -0.1472000373464621,
+        -0.28383983174964866
+      ],
+      "p95_max_abs_reach": 0.3423103919437458,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 4.347255795345147,
+      "mean_yaw_rate": -0.009584684186858374,
+      "front_support_sequences": [
+        [
+          2,
+          3,
+          5,
+          6,
+          8,
+          10,
+          12
+        ],
+        [
+          4,
+          5,
+          7,
+          8,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          1,
+          4,
+          7,
+          9,
+          11
+        ],
+        [
+          1,
+          2,
+          3,
+          6,
+          9
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.3,
+      "command_speed": 0.5,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        2,
+        2
+      ],
+      "both_front_first_tread": false,
+      "any_front_skipped": true,
+      "simulated_seconds": 12.599999999998456,
+      "final_position": [
+        4.496795217424117,
+        -0.16725437102809906,
+        2.4301205849631966
+      ],
+      "mean_velocity_x": 0.5241689181686555,
+      "later_stairs_mean_velocity_x": 0.5326033357393064,
+      "mean_reach_per_leg": [
+        0.13445832868692661,
+        0.03907972539497779,
+        -0.1412755941205923,
+        -0.22470224000247513
+      ],
+      "p95_max_abs_reach": 0.2901269658141318,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 5.622211852927596,
+      "mean_yaw_rate": 0.0034939911422055686,
+      "front_support_sequences": [
+        [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.3,
+      "command_speed": 0.7,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        2,
+        2
+      ],
+      "both_front_first_tread": false,
+      "any_front_skipped": true,
+      "simulated_seconds": 9.76000000000003,
+      "final_position": [
+        4.517598669580206,
+        -0.08329084903318819,
+        2.435713625887826
+      ],
+      "mean_velocity_x": 0.6891365795193882,
+      "later_stairs_mean_velocity_x": 0.7065386308454215,
+      "mean_reach_per_leg": [
+        0.11665502214108245,
+        0.011840859916507624,
+        -0.14935509061810776,
+        -0.24879549168666693
+      ],
+      "p95_max_abs_reach": 0.2969714167472431,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 5.068395862667187,
+      "mean_yaw_rate": 0.000576006257563568,
+      "front_support_sequences": [
+        [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.3,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        2,
+        3
+      ],
+      "both_front_first_tread": false,
+      "any_front_skipped": true,
+      "simulated_seconds": 7.260000000000759,
+      "final_position": [
+        4.501602540570984,
+        -0.019769640924363775,
+        2.4491562909826903
+      ],
+      "mean_velocity_x": 0.9705528451735166,
+      "later_stairs_mean_velocity_x": 0.9818860785777737,
+      "mean_reach_per_leg": [
+        0.09799920669156362,
+        -0.019959312370923125,
+        -0.15404716498599869,
+        -0.27166458224429135
+      ],
+      "p95_max_abs_reach": 0.3184812391240218,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 4.0821100954517995,
+      "mean_yaw_rate": 0.009733115918355219,
+      "front_support_sequences": [
+        [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    }
+  ],
+  "source35499": [
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 0.5,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        4.836483667765271,
+        0.046491573571190006,
+        0.5663161489588795
+      ],
+      "mean_velocity_x": 0.48684098897648026,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.04432673911888528,
+        -0.03342167069172464,
+        -0.039633786379345046,
+        -0.006847073480529989
+      ],
+      "p95_max_abs_reach": 0.04548077605200605,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 1.1165156926024846,
+      "mean_yaw_rate": 0.001990999694196565
+    },
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 0.7,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        7.092249135599725,
+        0.018615463008593073,
+        0.5662533811013752
+      ],
+      "mean_velocity_x": 0.6763404376644637,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.04654818175424594,
+        -0.04223440570992058,
+        -0.03305225680470849,
+        -0.004333158626925252
+      ],
+      "p95_max_abs_reach": 0.04749422603077945,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 0.4813194910926939,
+      "mean_yaw_rate": 0.0010810975919985197
+    },
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        10.81941676730694,
+        -0.01693835965073124,
+        0.5659238285496556
+      ],
+      "mean_velocity_x": 0.9856395974993406,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.04133363042211811,
+        -0.0518486110380608,
+        -0.016502771676901853,
+        -0.00039465067308286253
+      ],
+      "p95_max_abs_reach": 0.05196680269721013,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 0.26170730516417207,
+      "mean_yaw_rate": 8.998690328045048e-05
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 0.5,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 12.679999999998412,
+      "final_position": [
+        3.7721400114753436,
+        -0.07553802874698173,
+        2.468817352169174
+      ],
+      "mean_velocity_x": 0.4575173180656987,
+      "later_stairs_mean_velocity_x": 0.46718295111847513,
+      "mean_reach_per_leg": [
+        0.12077022253721188,
+        -0.021731108180352336,
+        -0.14499704353319776,
+        -0.2254696679516925
+      ],
+      "p95_max_abs_reach": 0.341748087916819,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 6.93062300835776,
+      "mean_yaw_rate": -0.0036993132945582078,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        [
+          2
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 0.7,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 9.780000000000019,
+      "final_position": [
+        3.786566696552401,
+        0.06769219693711795,
+        2.4471167658915194
+      ],
+      "mean_velocity_x": 0.6182726928612632,
+      "later_stairs_mean_velocity_x": 0.6226494410598838,
+      "mean_reach_per_leg": [
+        0.11337601331378103,
+        -0.027719473686879093,
+        -0.15562636882425598,
+        -0.2553102010331629
+      ],
+      "p95_max_abs_reach": 0.3491932735270225,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 4.0234521614956416,
+      "mean_yaw_rate": 0.005125077924483461,
+      "front_support_sequences": [
+        [
+          1,
+          3,
+          4,
+          5,
+          7,
+          8,
+          10,
+          11,
+          12
+        ],
+        [
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          2,
+          6,
+          9
+        ],
+        [
+          2,
+          7,
+          11
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 6.960000000000659,
+      "final_position": [
+        3.843309402747856,
+        -0.26236614654966434,
+        2.4522389356610628
+      ],
+      "mean_velocity_x": 0.9404695691251637,
+      "later_stairs_mean_velocity_x": 0.9469630053362742,
+      "mean_reach_per_leg": [
+        0.11773819785293768,
+        -0.0592309005953553,
+        -0.15057356091807456,
+        -0.28195889199196167
+      ],
+      "p95_max_abs_reach": 0.35093473102754125,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 5.308124713836201,
+      "mean_yaw_rate": -0.0086195593355472,
+      "front_support_sequences": [
+        [
+          1,
+          3,
+          4,
+          6,
+          8,
+          10,
+          12
+        ],
+        [
+          1,
+          3,
+          6,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          2,
+          5,
+          7,
+          9,
+          11
+        ],
+        [
+          2,
+          4,
+          5,
+          7,
+          8,
+          9
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.3,
+      "command_speed": 0.5,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 11.9799999999988,
+      "final_position": [
+        4.31642277433005,
+        0.20420002379031155,
+        2.482071086797078
+      ],
+      "mean_velocity_x": 0.5501842367186485,
+      "later_stairs_mean_velocity_x": 0.5834311194206584,
+      "mean_reach_per_leg": [
+        0.12279501701334954,
+        0.0070142372789590715,
+        -0.12603831389514203,
+        -0.2032043143912556
+      ],
+      "p95_max_abs_reach": 0.31780108300013615,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 3.6505481532590096,
+      "mean_yaw_rate": 0.01003884091623844,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        []
+      ],
+      "no_observed_tread_skip": true,
+      "all_treads_supported": true
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.3,
+      "command_speed": 0.7,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 9.58000000000013,
+      "final_position": [
+        4.2697899342632955,
+        0.312508964367696,
+        2.4469128919563596
+      ],
+      "mean_velocity_x": 0.7016539625492274,
+      "later_stairs_mean_velocity_x": 0.7232520704839144,
+      "mean_reach_per_leg": [
+        0.11678239301282346,
+        -0.007405095236277571,
+        -0.1394082461482376,
+        -0.2414014905908751
+      ],
+      "p95_max_abs_reach": 0.32767847837964914,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 3.3960586651863283,
+      "mean_yaw_rate": 0.008345794653158758,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.3,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 7.340000000000786,
+      "final_position": [
+        4.320392997476743,
+        0.443179693076054,
+        2.4681491996511107
+      ],
+      "mean_velocity_x": 0.9406907663803561,
+      "later_stairs_mean_velocity_x": 0.9525542701188013,
+      "mean_reach_per_leg": [
+        0.0958878643111226,
+        -0.026980481915395288,
+        -0.13162191134124657,
+        -0.2663905653810441
+      ],
+      "p95_max_abs_reach": 0.3307820040529701,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 4.640907218052748,
+      "mean_yaw_rate": 0.018662740952286243,
+      "front_support_sequences": [
+        [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          2
+        ],
+        [
+          2
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    }
+  ],
+  "failed75350": [
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 0.5,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        5.3808837531971285,
+        0.014878292671809058,
+        0.5640168932040377
+      ],
+      "mean_velocity_x": 0.5276639488241333,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        0.0034710286488826188,
+        -0.07434160897228966,
+        -0.01680656807114382,
+        0.005508207751930742
+      ],
+      "p95_max_abs_reach": 0.0743962620864534,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 0.9278934038814409,
+      "mean_yaw_rate": 0.00022846360700316188
+    },
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 0.7,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        7.5597592739712995,
+        -0.08482634259814871,
+        0.5657770274506767
+      ],
+      "mean_velocity_x": 0.7085659770175334,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        0.00021998882457900196,
+        -0.09052945531901337,
+        -0.03148263347911088,
+        0.007647783181895446
+      ],
+      "p95_max_abs_reach": 0.09077605109919559,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 0.6885294713862472,
+      "mean_yaw_rate": -5.991450858000158e-05
+    },
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        10.651772384178976,
+        -0.28226354294576556,
+        0.5665467844118676
+      ],
+      "mean_velocity_x": 0.9656195299177935,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        0.014304853124813088,
+        -0.09277786539472051,
+        -0.043625377605398585,
+        0.019889536980470857
+      ],
+      "p95_max_abs_reach": 0.09318635966676724,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 1.5992726396037535,
+      "mean_yaw_rate": 0.0005371133154163707
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 0.5,
+      "fell": true,
+      "termination": "fall",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 8.860000000000529,
+      "final_position": [
+        0.04442033652322603,
+        0.24213135415210796,
+        0.47422386673271805
+      ],
+      "mean_velocity_x": 0.037245828607019034,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.1720377305415549,
+        -0.12175954471083701,
+        -0.1777530205889863,
+        -0.12263671127303077
+      ],
+      "p95_max_abs_reach": 0.3107481815405621,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 24.684113311681536,
+      "mean_yaw_rate": -0.005173632710212329,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        []
+      ],
+      "no_observed_tread_skip": true,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 0.7,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        0.5448315796216731,
+        -0.38262885089753135,
+        0.7519507038135148
+      ],
+      "mean_velocity_x": 0.06757850286104945,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.20402268202773763,
+        -0.09679408931074684,
+        -0.28607328548733385,
+        -0.24369521768751576
+      ],
+      "p95_max_abs_reach": 0.3641181146058426,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 25.587675440267137,
+      "mean_yaw_rate": 0.011827383902453567,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        []
+      ],
+      "no_observed_tread_skip": true,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 1.0,
+      "fell": true,
+      "termination": "fall",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 14.399999999997458,
+      "final_position": [
+        0.48121221005974346,
+        0.5596672781212032,
+        0.6517468898283321
+      ],
+      "mean_velocity_x": 0.04131286886881934,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.19838170911178632,
+        -0.1724964699119088,
+        -0.19661009237680085,
+        -0.1670105120337053
+      ],
+      "p95_max_abs_reach": 0.361849749238766,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 18.99396768494312,
+      "mean_yaw_rate": 0.03738666772532647,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        []
+      ],
+      "no_observed_tread_skip": true,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.3,
+      "command_speed": 0.5,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        0.3759099739054776,
+        -0.2508592189591638,
+        0.7054552135802156
+      ],
+      "mean_velocity_x": 0.06868110651400515,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.17959853477559404,
+        -0.12747129696058543,
+        -0.22042916587012007,
+        -0.1574951753087158
+      ],
+      "p95_max_abs_reach": 0.3155976104616991,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 25.15371364980779,
+      "mean_yaw_rate": 0.012272449061163447,
+      "front_support_sequences": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          2
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        []
+      ],
+      "no_observed_tread_skip": true,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.3,
+      "command_speed": 0.7,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        0.4143087189416483,
+        -0.41400230125063225,
+        0.7191659996684636
+      ],
+      "mean_velocity_x": 0.059813768350528915,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.18478743428641142,
+        -0.1373657642130136,
+        -0.22165290434308743,
+        -0.15504075182285998
+      ],
+      "p95_max_abs_reach": 0.2901734442671227,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 22.366212286866094,
+      "mean_yaw_rate": 0.015025267210680123,
+      "front_support_sequences": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        []
+      ],
+      "no_observed_tread_skip": true,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.3,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        0.521692757221887,
+        0.3439730917742642,
+        0.7340875654714886
+      ],
+      "mean_velocity_x": 0.028519378765013627,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.2082440386703559,
+        -0.16405424459837273,
+        -0.2573627572612221,
+        -0.13574365400682692
+      ],
+      "p95_max_abs_reach": 0.34334483389833304,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 25.830969699418066,
+      "mean_yaw_rate": 0.06910852137128166,
+      "front_support_sequences": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        []
+      ],
+      "no_observed_tread_skip": true,
+      "all_treads_supported": false
+    }
+  ],
+  "ordered40000": [
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 0.5,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        4.727798701372195,
+        -0.3241461455169589,
+        0.5646885914792138
+      ],
+      "mean_velocity_x": 0.4754510245304695,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.029981091194906193,
+        -0.0438278841432294,
+        0.0504557072397685,
+        0.045492148042803694
+      ],
+      "p95_max_abs_reach": 0.05080749576233371,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 4.980298887078759,
+      "mean_yaw_rate": -0.00490113786258522
+    },
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 0.7,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        6.81798427236832,
+        -0.5016598984671512,
+        0.5648746984577826
+      ],
+      "mean_velocity_x": 0.653341987017102,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.0410011083174665,
+        -0.04926233937109844,
+        0.060098020758527056,
+        0.05289569018727015
+      ],
+      "p95_max_abs_reach": 0.06134440096841165,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 5.157359561735848,
+      "mean_yaw_rate": -0.004040843801538834
+    },
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        9.368286651352584,
+        -0.7793976966655674,
+        0.5650385630938947
+      ],
+      "mean_velocity_x": 0.8698344199742187,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.04848239437913895,
+        -0.055581987890434253,
+        0.07552150184000747,
+        0.05858916194922638
+      ],
+      "p95_max_abs_reach": 0.0772329260191238,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 6.2975979210600554,
+      "mean_yaw_rate": -0.005543238531757396
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 0.5,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        1.5080570445168817,
+        -0.013090275967622175,
+        1.3820698390651003
+      ],
+      "mean_velocity_x": 0.17696528309370363,
+      "later_stairs_mean_velocity_x": 0.0902322825362798,
+      "mean_reach_per_leg": [
+        0.059929132617790655,
+        -0.053156924736013564,
+        -0.26753557525999394,
+        -0.28672975495797404
+      ],
+      "p95_max_abs_reach": 0.3582821509528448,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 6.312454255242105,
+      "mean_yaw_rate": 0.01502296411781835,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        []
+      ],
+      "no_observed_tread_skip": true,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 0.7,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 10.939999999999376,
+      "final_position": [
+        3.8764196397233923,
+        0.3294379189099052,
+        2.4610948607030605
+      ],
+      "mean_velocity_x": 0.5233255338051898,
+      "later_stairs_mean_velocity_x": 0.572777024147272,
+      "mean_reach_per_leg": [
+        0.13458737562867382,
+        -0.11607362125349886,
+        -0.2379000771814488,
+        -0.2611080868555548
+      ],
+      "p95_max_abs_reach": 0.3573929389757584,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 10.918966950863311,
+      "mean_yaw_rate": 0.01744412220065791,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          7
+        ],
+        []
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 10.079999999999853,
+      "final_position": [
+        3.92668571004314,
+        0.41424169273330985,
+        2.4512113634292674
+      ],
+      "mean_velocity_x": 0.5479308391451414,
+      "later_stairs_mean_velocity_x": 0.5005150520084676,
+      "mean_reach_per_leg": [
+        0.15726389192422333,
+        -0.1464185903019386,
+        -0.2644213862490621,
+        -0.2556955963099147
+      ],
+      "p95_max_abs_reach": 0.3673693328305361,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 12.815568869166908,
+      "mean_yaw_rate": 0.004262373204143992,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        []
+      ],
+      "no_observed_tread_skip": true,
+      "all_treads_supported": true
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.3,
+      "command_speed": 0.5,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 11.839999999998877,
+      "final_position": [
+        4.285457965008954,
+        0.1593346446078966,
+        2.469919183031333
+      ],
+      "mean_velocity_x": 0.5439174349746854,
+      "later_stairs_mean_velocity_x": 0.5311132770106964,
+      "mean_reach_per_leg": [
+        0.11859747249116945,
+        -0.06136995233061975,
+        -0.21838411409522734,
+        -0.22843657114396496
+      ],
+      "p95_max_abs_reach": 0.344904107692411,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 5.727512032028909,
+      "mean_yaw_rate": 0.010572866721248755,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        []
+      ],
+      "no_observed_tread_skip": true,
+      "all_treads_supported": true
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.3,
+      "command_speed": 0.7,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 9.160000000000363,
+      "final_position": [
+        4.34126197685641,
+        0.38995453041176564,
+        2.4625228758490767
+      ],
+      "mean_velocity_x": 0.7285372657472465,
+      "later_stairs_mean_velocity_x": 0.7284811970172543,
+      "mean_reach_per_leg": [
+        0.10634441476046776,
+        -0.09561674054812501,
+        -0.21181015271863757,
+        -0.24545689023217995
+      ],
+      "p95_max_abs_reach": 0.34275525160006765,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 2.7680874802543967,
+      "mean_yaw_rate": 0.023239569676503653,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        []
+      ],
+      "no_observed_tread_skip": true,
+      "all_treads_supported": true
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.3,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 9.460000000000196,
+      "final_position": [
+        4.359381772051539,
+        0.043891019166099346,
+        2.456923705527838
+      ],
+      "mean_velocity_x": 0.6349504434716648,
+      "later_stairs_mean_velocity_x": 0.6334864091766537,
+      "mean_reach_per_leg": [
+        0.13586506765739875,
+        -0.15327088835780237,
+        -0.2666034664310242,
+        -0.2378046655886066
+      ],
+      "p95_max_abs_reach": 0.3727062415191748,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 12.845629573913737,
+      "mean_yaw_rate": -8.039519171882009e-05,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          10
+        ],
+        [
+          11
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    }
+  ],
+  "probe36000": [
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        10.217840166885617,
+        0.27996355450302585,
+        0.5676702650145358
+      ],
+      "mean_velocity_x": 0.935161937340187,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.07269669639665835,
+        -0.037551400531875445,
+        -0.013267293912093204,
+        -0.029190877156182855
+      ],
+      "p95_max_abs_reach": 0.07404623693955074,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 2.8573771412529196,
+      "mean_yaw_rate": 0.004088240841566111
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 10.519999999999609,
+      "final_position": [
+        3.841923615284405,
+        0.43226343626395913,
+        2.418408967076318
+      ],
+      "mean_velocity_x": 0.5233912686224745,
+      "later_stairs_mean_velocity_x": 0.4966261815531047,
+      "mean_reach_per_leg": [
+        0.049762330562470786,
+        -0.06822289728551673,
+        -0.20425924201053322,
+        -0.2783723431016128
+      ],
+      "p95_max_abs_reach": 0.37591117325713247,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 20.22178565016023,
+      "mean_yaw_rate": 0.01149158660386811,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    }
+  ],
+  "probe50000": [
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        10.00403798814749,
+        0.8609419488321488,
+        0.5669654630662078
+      ],
+      "mean_velocity_x": 0.9135882301536147,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.04328143390465155,
+        -0.013572966593879144,
+        0.04680261961693418,
+        0.029625180990747242
+      ],
+      "p95_max_abs_reach": 0.0492491117916907,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 7.580908345310378,
+      "mean_yaw_rate": 0.009081248480770803
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "flight_complete",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 9.600000000000119,
+      "final_position": [
+        3.8776092601382497,
+        -0.23443124120937076,
+        2.4188154140842526
+      ],
+      "mean_velocity_x": 0.5748943015035939,
+      "later_stairs_mean_velocity_x": 0.5650129906882112,
+      "mean_reach_per_leg": [
+        0.03331481337866305,
+        -0.011893479188214063,
+        -0.17180259799900774,
+        -0.23307435798959397
+      ],
+      "p95_max_abs_reach": 0.32991099433067306,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 9.799910395158692,
+      "mean_yaw_rate": -0.005864107568069811,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12
+        ]
+      ],
+      "skipped_treads": [
+        [
+          8
+        ],
+        [
+          10
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    }
+  ],
+  "probe60000": [
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        10.92296678572763,
+        0.3403712493658261,
+        0.5671586418463721
+      ],
+      "mean_velocity_x": 0.9975897502439575,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        -0.011322479597882082,
+        -0.05872835603566416,
+        -0.010722439785966622,
+        -0.05362977641403058
+      ],
+      "p95_max_abs_reach": 0.06063287542891197,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 2.6861279935391797,
+      "mean_yaw_rate": 0.003283256491909309
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        2.090824007381283,
+        0.3633573214179389,
+        1.6872880341239813
+      ],
+      "mean_velocity_x": 0.23853967554049305,
+      "later_stairs_mean_velocity_x": 0.16797044330141667,
+      "mean_reach_per_leg": [
+        -0.17719652691596052,
+        -0.12046577813738156,
+        -0.27762068989255656,
+        -0.18888534068741192
+      ],
+      "p95_max_abs_reach": 0.35425698064730254,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 33.23330945905587,
+      "mean_yaw_rate": 0.06567140945993497,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8
+        ],
+        [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      ],
+      "skipped_treads": [
+        [
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "no_observed_tread_skip": false,
+      "all_treads_supported": false
+    }
+  ],
+  "probe70000": [
+    {
+      "terrain": "flat",
+      "tread": null,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": null,
+      "both_front_first_tread": null,
+      "any_front_skipped": null,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        11.600754768410837,
+        -0.15748291297169925,
+        0.5658384650723683
+      ],
+      "mean_velocity_x": 1.047022610804733,
+      "later_stairs_mean_velocity_x": null,
+      "mean_reach_per_leg": [
+        0.04311595597776863,
+        -0.025959646590663805,
+        -0.000367269075576302,
+        -0.013233523258700287
+      ],
+      "p95_max_abs_reach": 0.044840105344315824,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 1.4180826982699375,
+      "mean_yaw_rate": -0.0016883594785843793
+    },
+    {
+      "terrain": "ascent",
+      "tread": 0.26,
+      "command_speed": 1.0,
+      "fell": false,
+      "termination": "duration",
+      "first_supported_tread": [
+        1,
+        1
+      ],
+      "both_front_first_tread": true,
+      "any_front_skipped": false,
+      "simulated_seconds": 14.999999999997126,
+      "final_position": [
+        1.3907683273084928,
+        0.4319552359137566,
+        1.1837822673739733
+      ],
+      "mean_velocity_x": 0.10699372107900738,
+      "later_stairs_mean_velocity_x": 0.0795979446836393,
+      "mean_reach_per_leg": [
+        -0.26567136969121385,
+        -0.20942654376948316,
+        -0.3103881046967401,
+        -0.13291644577660766
+      ],
+      "p95_max_abs_reach": 0.3496644542215687,
+      "command_yaw_max_abs": 0.0,
+      "after_c_idle_yaw_change_deg": 0.0,
+      "forward_yaw_max_change_deg": 23.232252100757304,
+      "mean_yaw_rate": 0.02234218898721542,
+      "front_support_sequences": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      ],
+      "skipped_treads": [
+        [],
+        []
+      ],
+      "no_observed_tread_skip": true,
+      "all_treads_supported": false
+    }
+  ]
+}

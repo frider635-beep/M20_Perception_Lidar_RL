@@ -1,0 +1,78 @@
+{
+  "terrain_loader.py": {
+    "source": "/home/mark/deeprobotics_lab/deploy_real_ws/rl_training/deploy/deploy_mujoco/terrain_loader.py",
+    "sha256": "4caa312300b719d6643a723ac511e8fb35c8101ea3a698e2b9062644c9f04933",
+    "migration": "unchanged"
+  },
+  "reset_placement.py": {
+    "source": "/home/mark/deeprobotics_lab/deploy_real_ws/rl_training/deploy/deploy_mujoco/reset_placement.py",
+    "sha256": "2851307f9ae1481c08529b34a3ba755d13b25ba8423c4458bcdcfc96f5e467b0",
+    "migration": "unchanged"
+  },
+  "keyboard_input.py": {
+    "source": "/home/mark/deeprobotics_lab/deploy_real_ws/rl_training/deploy/deploy_mujoco/keyboard_input.py",
+    "migration": "X11 focus/release detection migrated; movement bindings now imported from key_bindings.py and poll both top-row and keypad digits",
+    "source_sha256": "133b181ab0beeb19deb807009d7932b465afeb75c136a15f95944357b0d77e6c",
+    "migrated_sha256": "1ba50168c120acf4db2330e9ef5f4009d7bedf1b5cfe1842f1eb7226603e3a12"
+  },
+  "terrains/stairs_ascent_walls.xml": {
+    "source": "/home/mark/deeprobotics_lab/deploy_real_ws/rl_training/deploy/deploy_mujoco/terrains/stairs_ascent_walls.xml",
+    "sha256": "8c97f134e3a698fb61fa7cb881677fc0430dc6baca4a82c4dbca1ddd443e1a7c",
+    "migration": "unchanged"
+  },
+  "terrains/stairs_descent_walls.xml": {
+    "source": "/home/mark/deeprobotics_lab/deploy_real_ws/rl_training/deploy/deploy_mujoco/terrains/stairs_descent_walls.xml",
+    "sha256": "fe4032d45314a8dc6f1c9dd1346b7b2c629a4bbf152112ad61c77c23a1f5577a",
+    "migration": "unchanged"
+  },
+  "terrains/flat.xml": {
+    "source": "/home/mark/deeprobotics_lab/deploy_real_ws/rl_training/deploy/deploy_mujoco/terrains/flat.xml",
+    "sha256": "c666ac27dde7fb49ef016901beb952588d451fc4068c0b88db8836079c2a876c",
+    "migration": "unchanged"
+  },
+  "teleop.py": {
+    "source": "/home/mark/deeprobotics_lab/deploy_real_ws/rl_training/deploy/deploy_mujoco/deploy_mujoco.py",
+    "source_sha256": "0b72e2356ba54381a7a1e0d440864f1e386f505cd465ae37a2a90edbf3c3c4df",
+    "migration": "Selected keyboard/viewer lifecycle; saved runtime policy period; numeric 8/5/4/6 movement and 7/9 yaw via key_bindings.py",
+    "migrated_sha256": "2c032fd841d7a323c4becf06fcfb9339a23358c973450e7703b604e639164297"
+  },
+  "assets/m20": {
+    "source": "/home/mark/deeprobotics_lab/sdk_deploy/src/M20_sdk_deploy/M20_description/m20_mjcf",
+    "migration": "Unchanged M20.xml plus its 17 referenced meshes only; unrelated source meshes/scenes omitted",
+    "files": {
+      "meshes/base_link.STL": "a7984137d06782f513858fd699111109978301a9dff53ff37abf5413b922247f",
+      "meshes/fl_hipx.STL": "179c634929072ae0ccf1dcdab1b005ac49b54e3225e78377afcff65951841aeb",
+      "meshes/fl_hipy.STL": "c895052a02ccbb21111815a20676a8dbef82aca62edf4cb0289afc68d54034ef",
+      "meshes/fl_knee.STL": "c2ac2f2c9664d847646efed234f35f47c30b28f35083abb470193eb0535c3154",
+      "meshes/fl_wheel.STL": "bcfca68aeeb8e5f118d4623a384cb040f611c32c1115b8574aed4c546e64685d",
+      "meshes/fr_hipx.STL": "350a5bca1df65250de995636583a5415d24625add5a5da447e9a09fb4661540b",
+      "meshes/fr_hipy.STL": "6a776a1637c7676a3220aa51df6f2a59ebb7b8a94da10305940653902116e9ee",
+      "meshes/fr_knee.STL": "e158a0ca5a5ef08862714d546576d23706b096576a3e20e3d7a88184d72e4743",
+      "meshes/fr_wheel.STL": "2773ffcac685b1e288b09d13b80991987d722f386a645cd99b88de01eb02706b",
+      "meshes/hl_hipx.STL": "3c20e792611b5142b4237f381a300079bb3d5d71e59c0d0a38335ff67988cf3a",
+      "meshes/hl_hipy.STL": "d2c9efec9bfc31fef034617879fab4b731ac22d67a8f1d5f89ba4ca6d3a375ac",
+      "meshes/hl_knee.STL": "f6897fb23e4f1fe0943952f36f756d93ef6de88f48ac1ede294a7ca852ab82a1",
+      "meshes/hl_wheel.STL": "d61d98f986e989484d37ac15700f43c409b1205ff649b4ba14f6ac3ee0f7e7c2",
+      "meshes/hr_hipx.STL": "b49f8992cc84058e6009b804e4d68137059636175c5ba32816d36611d5b5b98a",
+      "meshes/hr_hipy.STL": "70332110c7bc92d4498834cb37260c32de3e2d4b44e821bcf14a71ddf73d3e72",
+      "meshes/hr_knee.STL": "2fcf688c30596b3640e528defa92b58fe7804586586a681677115ea6d93f60e3",
+      "meshes/hr_wheel.STL": "88b2fca83119f36b156520ae4c7a4334baa6a2ad71da90e1a529e10114a16641",
+      "mjcf/M20.xml": "323048fbe5861522e3015bc12b8cd03e3d5a452f0b8a7b959df910bca82bdbf4"
+    }
+  },
+  "saved_config.py": {
+    "source": "scripts/tools/m20_export_contract.py",
+    "source_sha256": "a1f329a87ee05bf7a03c5dc370f953a0b00c0c8fb9ca39e4b9f073e68f86c164",
+    "migration": "Saved YAML/action-contract reader only; no training execution dependency; accepts the explicitly resolved env.yaml path for relocated checkpoints"
+  },
+  "reference_risers.py": {
+    "source": "source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/mdp/perceptive_spatial.py",
+    "source_sha256": "fca986f57b4c43e85dcb09abf3a6c1412657d85ba486b34292dfcc7ad8bccaa2",
+    "migration": "Exact pure extract_two_risers_points function; test reference only"
+  },
+  "interaction.py": {
+    "source": "/home/mark/deeprobotics_lab/deploy_real_ws/rl_training/deploy/deploy_mujoco/deploy_mujoco.py",
+    "source_sha256": "0b72e2356ba54381a7a1e0d440864f1e386f505cd465ae37a2a90edbf3c3c4df",
+    "migration": "Prone/pre-stand poses, two-stage stand and ready/policy gate adapted from source. R explicitly changed by user request to restore stationary standing snapshot; Backspace restores original prone spawn. Automatic goal exit removed by default."
+  }
+}

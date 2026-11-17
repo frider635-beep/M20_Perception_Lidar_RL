@@ -1,0 +1,10 @@
+{
+  "checkpoint": "interview_prep/model_35300.pt",
+  "excluded_training_directories": [".codex-scratch", ".pytest_cache", ".vscode", "artifacts", "exported", "logs", "m20_depth_rl", "outputs", "provenance"],
+  "excluded_directory_names": [".git", "__pycache__", ".pytest_cache", ".idea", ".vscode", "runs", "logs", "outputs", "videos", "wandb"],
+  "excluded_suffixes": [".pyc", ".pyo", ".log", ".tmp", ".pt", ".pth", ".ckpt", ".onnx", ".safetensors", ".jit", ".pkl", ".pickle", ".zip", ".gz", ".tar", ".mp4", ".webm"],
+  "excluded_names": ["AGENTS.md", "CLAUDE.md", ".env", ".gitmodules", "tree.txt", "SHA256SUMS"],
+  "validation_roots": ["deploy/mujoco_v135", "run_mujoco_v135.sh"],
+  "maximum_file_bytes": 94371840,
+  "notes": "Export current source files into a new directory. Never delete or rewrite local task files, logs, checkpoints or Git history. Include the selected weight and its exact params; exclude historical generated outputs even when tracked."
+}

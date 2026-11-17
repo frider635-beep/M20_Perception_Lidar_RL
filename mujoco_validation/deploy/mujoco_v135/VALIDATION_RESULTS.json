@@ -1,0 +1,277 @@
+{
+  "ascent_73299": {
+    "summary": {
+      "status": "goal_reached",
+      "goal_reached": true,
+      "fell": false,
+      "observed_bypass": false,
+      "control_steps": 538,
+      "simulated_seconds": 10.76,
+      "final_position": [
+        4.122393288449576,
+        0.07824462244429572,
+        2.475496703861172
+      ],
+      "max_x": 4.122393288449576,
+      "max_base_height": 2.480763771645893,
+      "frames_with_active_edge": 384,
+      "reset_count": 0,
+      "output": "/media/mark/2T_SSD/M20_perception_Lidar_rl_2/mujoco_validation/deploy/mujoco_v135/runs/ascent_73299",
+      "strict_gait_acceptance": "not_measured"
+    },
+    "manifest_sha256": "06e9ad0bbdd4c5b1b7285bee86ad847993c6564bf863619a97149911d33658be",
+    "trajectory_sha256": "e29af42c224f3703ba8878bf05941ceb94afa5a5d27029192df7b98527e8ee3d"
+  },
+  "ascent_video_v2_73299": {
+    "summary": {
+      "status": "goal_reached",
+      "goal_reached": true,
+      "fell": false,
+      "observed_bypass": false,
+      "control_steps": 538,
+      "simulated_seconds": 10.76,
+      "final_position": [
+        4.122393288449576,
+        0.07824462244429572,
+        2.475496703861172
+      ],
+      "max_x": 4.122393288449576,
+      "max_base_height": 2.480763771645893,
+      "frames_with_active_edge": 384,
+      "reset_count": 0,
+      "output": "/media/mark/2T_SSD/M20_perception_Lidar_rl_2/mujoco_validation/deploy/mujoco_v135/runs/ascent_video_v2_73299",
+      "strict_gait_acceptance": "not_measured"
+    },
+    "manifest_sha256": "954226cb2458c52f94acb676fd614d22f61d97b5ce4fef2c6a92c57eef877952",
+    "trajectory_sha256": "e29af42c224f3703ba8878bf05941ceb94afa5a5d27029192df7b98527e8ee3d"
+  },
+  "descent_73299": {
+    "summary": {
+      "status": "goal_reached",
+      "goal_reached": true,
+      "fell": false,
+      "observed_bypass": false,
+      "control_steps": 683,
+      "simulated_seconds": 13.66,
+      "final_position": [
+        4.612480039965655,
+        -0.1001354963586668,
+        0.5536405632042317
+      ],
+      "max_x": 4.612480039965655,
+      "max_base_height": 2.615273547699669,
+      "frames_with_active_edge": 512,
+      "reset_count": 0,
+      "output": "/media/mark/2T_SSD/M20_perception_Lidar_rl_2/mujoco_validation/deploy/mujoco_v135/runs/descent_73299",
+      "strict_gait_acceptance": "not_measured"
+    },
+    "manifest_sha256": "79b7f47e8c957854036656d63f6468614707726f71a6ffd3b2156146b05cb437",
+    "trajectory_sha256": "f1235138e4132832cc31f7f45252e31fea57274f060a18a0c404657bfee35fc3"
+  },
+  "flat_73299": {
+    "summary": {
+      "status": "timeout",
+      "goal_reached": false,
+      "fell": false,
+      "observed_bypass": false,
+      "control_steps": 400,
+      "simulated_seconds": 8.0,
+      "final_position": [
+        1.911242521280989,
+        -0.033426122277890394,
+        0.5540134952533783
+      ],
+      "max_x": 1.911242521280989,
+      "max_base_height": 0.5686682446417045,
+      "frames_with_active_edge": 0,
+      "reset_count": 0,
+      "output": "/media/mark/2T_SSD/M20_perception_Lidar_rl_2/mujoco_validation/deploy/mujoco_v135/runs/flat_73299",
+      "strict_gait_acceptance": "not_measured"
+    },
+    "manifest_sha256": "b852a90f3d7d1be73938d2568c18f98af015e4e316b85a02b2daa1c0629b7398",
+    "trajectory_sha256": "ee1908c00413a10acbe2e7a6013e72a86f88afb3e53bf02786e6765cc82aa65e"
+  },
+  "viewer_smoke": {
+    "summary": {
+      "status": "timeout",
+      "goal_reached": false,
+      "fell": false,
+      "observed_bypass": false,
+      "control_steps": 100,
+      "simulated_seconds": 2.0,
+      "final_position": [
+        -1.0085872454944802,
+        0.0005044343079371738,
+        0.5649077251318365
+      ],
+      "max_x": -0.9950088750861967,
+      "max_base_height": 0.5686682446417045,
+      "frames_with_active_edge": 0,
+      "reset_count": 0,
+      "output": "/media/mark/2T_SSD/M20_perception_Lidar_rl_2/mujoco_validation/deploy/mujoco_v135/runs/viewer_smoke",
+      "strict_gait_acceptance": "not_measured"
+    },
+    "manifest_sha256": "d4ba2398aabc3a7305b8d413136bdb7a50cba1544bf61bb2d89a2218f9349871",
+    "trajectory_sha256": "19fb653b38fb87ebd99c78824c9e95b6236f61767e854df7c68222cd68f6d194"
+  },
+  "viewer_prone_lifecycle": {
+    "summary": {
+      "status": "timeout",
+      "goal_reached": false,
+      "fell": false,
+      "observed_bypass": false,
+      "control_steps": 100,
+      "simulated_seconds": 2.0,
+      "final_position": [
+        -0.9999990523114058,
+        7.222785662822145e-08,
+        0.10909300678822761
+      ],
+      "max_x": -0.9999990242334791,
+      "max_base_height": 0.11071086642346845,
+      "frames_with_active_edge": 0,
+      "reset_count": 0,
+      "final_mode": "prone",
+      "transitions": [
+        {
+          "time": 0.0,
+          "episode": 0,
+          "mode": "prone",
+          "reason": "startup"
+        }
+      ],
+      "goal_events": [],
+      "trajectory_parts": [
+        "trajectory.npz"
+      ],
+      "output": "/media/mark/2T_SSD/M20_perception_Lidar_rl_2/mujoco_validation/deploy/mujoco_v135/runs/viewer_prone_lifecycle",
+      "strict_gait_acceptance": "not_measured"
+    },
+    "manifest_sha256": "4926bffe1703efa6e147863659ada7f4f0349d90104998ed3bcd0d3ff67e6921",
+    "trajectory_sha256": "01de6c0d5afe766d309be18e5a9362a3e4affdace65bc35507a12573c9d9b9d5"
+  },
+  "session_chunk_check": {
+    "summary": {
+      "status": "timeout",
+      "goal_reached": false,
+      "fell": false,
+      "observed_bypass": false,
+      "control_steps": 4150,
+      "simulated_seconds": 83.0,
+      "final_position": [
+        -0.852057355885174,
+        -0.01641509918556852,
+        0.5601644364653547
+      ],
+      "max_x": -0.852057355885174,
+      "max_base_height": 0.5686682446417045,
+      "frames_with_active_edge": 0,
+      "reset_count": 0,
+      "final_mode": "policy",
+      "transitions": [
+        {
+          "time": 0.0,
+          "episode": 0,
+          "mode": "ready",
+          "reason": "startup"
+        },
+        {
+          "time": 1.0000000000000007,
+          "episode": 0,
+          "mode": "policy",
+          "reason": "batch settle complete"
+        }
+      ],
+      "goal_events": [],
+      "trajectory_parts": [
+        "trajectory_00000.npz",
+        "trajectory.npz"
+      ],
+      "output": "/media/mark/2T_SSD/M20_perception_Lidar_rl_2/mujoco_validation/deploy/mujoco_v135/runs/session_chunk_check",
+      "strict_gait_acceptance": "not_measured"
+    },
+    "part_rows": [
+      4096,
+      54
+    ],
+    "manifest_sha256": "9f2d27ba28ff3499fc74df3f7bafa0be837bc7d58dbeef87a23951a065b72b55"
+  },
+  "v111_35300_relocated": {
+    "summary": {
+      "status": "timeout",
+      "goal_reached": false,
+      "fell": false,
+      "observed_bypass": false,
+      "control_steps": 600,
+      "simulated_seconds": 12.0,
+      "final_position": [
+        3.705237378438337,
+        -0.4064753749522919,
+        2.464180796168424
+      ],
+      "max_x": 3.705237378438337,
+      "max_base_height": 2.464180796168424,
+      "frames_with_active_edge": 486,
+      "reset_count": 0,
+      "final_mode": "policy",
+      "transitions": [
+        {
+          "time": 0.0,
+          "episode": 0,
+          "mode": "ready",
+          "reason": "startup"
+        },
+        {
+          "time": 1.0000000000000007,
+          "episode": 0,
+          "mode": "policy",
+          "reason": "batch settle complete"
+        }
+      ],
+      "goal_events": [],
+      "trajectory_parts": [
+        "trajectory.npz"
+      ],
+      "output": "/media/mark/2T_SSD/M20_perception_Lidar_rl_2/mujoco_validation/deploy/mujoco_v135/runs/v111_35300_relocated",
+      "strict_gait_acceptance": "not_measured"
+    },
+    "manifest_sha256": "c100dadc885a9eca808db463a47635c2a2f264ff5888a71fbc58305ee8d78550",
+    "trajectory_sha256": "6e0c7c934c33ab654840bf129b00c0fe41e49e546c4828ab9b23eeb8cbc52a37"
+  },
+  "v111_35300_relocated_viewer": {
+    "summary": {
+      "status": "timeout",
+      "goal_reached": false,
+      "fell": false,
+      "observed_bypass": false,
+      "control_steps": 100,
+      "simulated_seconds": 2.0,
+      "final_position": [
+        -0.9999990523114058,
+        7.222785662822145e-08,
+        0.10909300678822761
+      ],
+      "max_x": -0.9999990242334791,
+      "max_base_height": 0.11071086642346845,
+      "frames_with_active_edge": 0,
+      "reset_count": 0,
+      "final_mode": "prone",
+      "transitions": [
+        {
+          "time": 0.0,
+          "episode": 0,
+          "mode": "prone",
+          "reason": "startup"
+        }
+      ],
+      "goal_events": [],
+      "trajectory_parts": [
+        "trajectory.npz"
+      ],
+      "output": "/media/mark/2T_SSD/M20_perception_Lidar_rl_2/mujoco_validation/deploy/mujoco_v135/runs/v111_35300_relocated_viewer",
+      "strict_gait_acceptance": "not_measured"
+    },
+    "manifest_sha256": "2b773d64aa3c419dc0909880593b4a4fcb51a259b4d7a7431ca9af5c2f6abded",
+    "trajectory_sha256": "01de6c0d5afe766d309be18e5a9362a3e4affdace65bc35507a12573c9d9b9d5"
+  }
+}

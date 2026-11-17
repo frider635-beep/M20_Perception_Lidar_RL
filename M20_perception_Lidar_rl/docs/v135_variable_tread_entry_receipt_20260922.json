@@ -1,0 +1,22 @@
+{
+  "source_sha256": {
+    "source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/mdp/commands.py": "b12ebdd60e6f539cde36843c25436a5ba9e65f315ed0fe4be6825b1d4b3baede",
+    "source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/mdp/v135_ascent_contract.py": "7adf8dd5d6f2bfe33ebc246d910ef83fa344e072f960a0c112de08ddfb1c82c3",
+    "source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/mdp/v135_ascent_support.py": "3a1306f24de597bc6bf6d9773cebbcea604b6f2059cd84e105f1b9885c942946",
+    "source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/mdp/v135_terrain_geometry.py": "381055474ff1ae22dda5a433db4249896c4ec1af36e6d5673942dc63522e6500",
+    "source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/mdp/v135_forward_credit.py": "62537cbefc727b10e3513e5c11cea7c8754852df0c242bbcfadd812dd4fc9c7d",
+    "source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/mdp/v135_final_ascent_reward.py": "079cfbf016b9c8e0d3ef617e1b058e3978575e3ae23ef351fbfa11e646bc3d76",
+    "source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/mdp/v135_riser_identity.py": "26fab8f915a5f5226f432439b4aa9a22d16ba7e964bfc091db543f15709ab7bc",
+    "source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/mdp/events.py": "afc86f84d8fac58c0c4b4c6fcf4682ddb188cdaf09dca369eff6f5c373b64b27",
+    "source/rl_training/rl_training/v135_behavior_metrics.py": "b668ab24319b025a39b9db14aba84543b0516619c389dcd8496e716320278f63",
+    "source/rl_training/rl_training/v135_training_report.py": "5123255cf62558f51a0b90e36cd0c743e65a9f507f71068aa18079f0eb05b997",
+    "source/rl_training/rl_training/tasks/manager_based/locomotion/velocity/config/wheeled/deeprobotics_m20/v135_v11fd_native_alternation_env_cfg.py": "7cd8d380330a8878c4923b3426d91dbc1a942a19a6e6070ed21f771b1cb45369",
+    "scripts/tools/test_m20_v135_tread_entry.py": "f51d453d73f75478f64d6c8ecfa2b195d8d03fa5960440a72db8078e9e5da7d3",
+    "scripts/tools/test_m20_v135_first_swing.py": "f5f099769f510e7fca90adc6199da5e2877b9c5aa9afdac7085c94821b98c4b2",
+    "scripts/tools/test_m20_v135_training_report.py": "72f4766449f84cfcae5799c04bb4323402e68fb5186fcac884a825b34c618192",
+    "scripts/tools/test_m20_v135_runtime_smoke.py": "fe24fbbe7deb9deb16a7ce9328f1842d7f4d5e871ba307cdf9891001a2416d7b"
+  },
+  "runtime_log": "/tmp/v135_tread_entry_verified_smoke.log",
+  "training_started": false,
+  "independent_review": "unavailable_usage_limit"
+}

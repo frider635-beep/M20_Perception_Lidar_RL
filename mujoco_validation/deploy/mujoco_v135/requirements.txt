@@ -1,0 +1,8 @@
+# Exact versions exercised locally are recorded in VALIDATION.md.
+numpy
+torch
+PyYAML
+mujoco>=3.3.7
+# Optional --video recording:
+imageio
+imageio-ffmpeg
